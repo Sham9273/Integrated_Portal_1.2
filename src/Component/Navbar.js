@@ -24,12 +24,8 @@ import { motion } from 'framer-motion';
 import AccessibilityBar from './AccessibilityBar';
 import logo from '../images/cdaclogo2.png';
 import React, { useState, useEffect } from 'react';
-<<<<<<< HEAD
-
-=======
 import SearchComponent from './SearchComponent';
 //import { Route } from 'react-router-dom';
->>>>>>> 8b55d03f8fdd2ab8faa07635407cbec3cef10b18
 
 export default function Navbar({ onFontSizeChange }) {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -96,7 +92,13 @@ export default function Navbar({ onFontSizeChange }) {
 
   ///for accesbility hidden
 
+  // const [showAccessibilityBar, setShowAccessibilityBar] = useState(true);
+  // const [fontSize, setFontSize] = useState(16);
+  // const [showAccessibilityBar,setShowAccessibilityBar,darkMode, setDarkMode] = useState(false);
+  const [fontSize, setFontSize] = useState(16);
   const [showAccessibilityBar, setShowAccessibilityBar] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -111,15 +113,15 @@ export default function Navbar({ onFontSizeChange }) {
     <>
       <CssBaseline />
       {showAccessibilityBar && (
-        <AccessibilityBar onFontSizeChange={onFontSizeChange} />
+        // <AccessibilityBar onFontSizeChange={onFontSizeChange} />\
+        <AccessibilityBar
+          setFontSize={setFontSize}
+          darkMode={darkMode}
+          setDarkMode={setDarkMode}
+        />
       )}
-<<<<<<< HEAD
-    
 
-    {/* Nav bar  */}
-=======
-
->>>>>>> 8b55d03f8fdd2ab8faa07635407cbec3cef10b18
+      {/* Nav bar  */}
       <AppBar
         position="fixed"
         elevation={4}
