@@ -24,12 +24,9 @@ import { motion } from 'framer-motion';
 import AccessibilityBar from './AccessibilityBar';
 import logo from '../images/cdaclogo2.png';
 import React, { useState, useEffect } from 'react';
-<<<<<<< HEAD
-
-=======
 import SearchComponent from './SearchComponent';
 //import { Route } from 'react-router-dom';
->>>>>>> 8b55d03f8fdd2ab8faa07635407cbec3cef10b18
+
 
 export default function Navbar({ onFontSizeChange }) {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -113,13 +110,11 @@ export default function Navbar({ onFontSizeChange }) {
       {showAccessibilityBar && (
         <AccessibilityBar onFontSizeChange={onFontSizeChange} />
       )}
-<<<<<<< HEAD
+
     
 
     {/* Nav bar  */}
-=======
 
->>>>>>> 8b55d03f8fdd2ab8faa07635407cbec3cef10b18
       <AppBar
         position="fixed"
         elevation={4}
