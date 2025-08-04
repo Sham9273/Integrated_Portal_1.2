@@ -24,6 +24,7 @@ import { motion } from 'framer-motion';
 import AccessibilityBar from './AccessibilityBar';
 import logo from '../images/cdaclogo2.png';
 import React, { useState, useEffect } from 'react';
+import SearchComponent from './SearchComponent';
 //import { Route } from 'react-router-dom';
 
 export default function Navbar({ onFontSizeChange }) {
@@ -40,7 +41,7 @@ export default function Navbar({ onFontSizeChange }) {
 
     {
       label: (
-        <span style={{ fontSize: '0.85rem',fontWeight: 'bold', color: 'black' }}>Home</span> // or '12px'
+        <span style={{ fontSize: '0.85rem', fontWeight: 'bold', color: 'black' }}>Home</span> // or '12px'
       ),
       icon: (
         <HomeIcon sx={{ fontSize: 18, color: '#07720aff' }} /> // smaller icon
@@ -48,7 +49,7 @@ export default function Navbar({ onFontSizeChange }) {
     },
     {
       label: (
-        <span style={{ fontSize: '0.85rem' ,fontWeight: 'bold', color: 'black' }}>Contact</span> // or '12px'
+        <span style={{ fontSize: '0.85rem', fontWeight: 'bold', color: 'black' }}>Contact</span> // or '12px'
       ),
       icon: (
         <ContactMailIcon sx={{ fontSize: 18, color: '#2196f3' }} /> // smaller icon
@@ -56,7 +57,7 @@ export default function Navbar({ onFontSizeChange }) {
     },
     {
       label: (
-        <span style={{ fontSize: '0.85rem',fontWeight: 'bold', color: 'black' }}>Help</span> // or '12px'
+        <span style={{ fontSize: '0.85rem', fontWeight: 'bold', color: 'black' }}>Help</span> // or '12px'
       ),
       icon: (
         <HelpOutlineIcon sx={{ fontSize: 18, color: '#a5a322ff' }} /> // smaller icon
@@ -64,7 +65,7 @@ export default function Navbar({ onFontSizeChange }) {
     },
     {
       label: (
-        <span style={{ fontSize: '0.85rem' ,fontWeight: 'bold', color: 'black' }}>Login</span> // or '12px'
+        <span style={{ fontSize: '0.85rem', fontWeight: 'bold', color: 'black' }}>Login</span> // or '12px'
       ),
       icon: (
         <LoginIcon sx={{ fontSize: 18, color: '#ff9800' }} /> // smaller icon
@@ -109,7 +110,7 @@ export default function Navbar({ onFontSizeChange }) {
       {showAccessibilityBar && (
         <AccessibilityBar onFontSizeChange={onFontSizeChange} />
       )}
-    
+
       <AppBar
         position="fixed"
         elevation={4}
@@ -117,7 +118,7 @@ export default function Navbar({ onFontSizeChange }) {
           mt: showAccessibilityBar ? 4 : 0,
           transition: 'margin-top 0.3s ease',
           // background: 'linear-gradient(to right, #c3e1f0ff, #8fc3deff)',
-          background : '#c3e1f0ff',
+          background: '#c3e1f0ff',
           WebkitBackdropFilter: 'blur(12px) saturate(150%)',
           backdropFilter: 'blur(12px) saturate(150%)',
           color: '#000',
@@ -137,7 +138,7 @@ export default function Navbar({ onFontSizeChange }) {
             transition={{ duration: 1 }}
           >
 
-            
+
 
             <Box
               component="img"
@@ -152,7 +153,7 @@ export default function Navbar({ onFontSizeChange }) {
           </motion.div>
 
           {/* Center - Search (Hide on small) */}
-          {!isMobile && (
+          {/* {!isMobile && (
             <motion.div
               whileHover={{ scale: 1.03 }}
               style={{
@@ -183,7 +184,8 @@ export default function Navbar({ onFontSizeChange }) {
               />
 
             </motion.div>
-          )}
+          )} */}
+
 
           {/* Right - Nav Items or Menu Icon */}
           {isMobile ? (
@@ -192,6 +194,8 @@ export default function Navbar({ onFontSizeChange }) {
             </IconButton>
           ) : (
             <Box sx={{ display: 'flex', gap: 3 }}>
+              {/* 🔍 Search bar with toggle (center) */}
+              <SearchComponent />
               {menuItems.map(({ label, icon }) => (
                 <motion.div
                   key={label}
