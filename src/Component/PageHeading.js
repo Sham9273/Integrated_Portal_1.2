@@ -1,18 +1,18 @@
 // import React from 'react';
 // import { Breadcrumbs, Typography, Link } from '@mui/material';
-import { useLocation, useNavigate } from 'react-router-dom';
+//import { useLocation, useNavigate } from 'react-router-dom';
 
 export default function BreadcrumbNavWithNotice() {
-  const location = useLocation();
-  const navigate = useNavigate();
-  const pathnames = location.pathname.split('/').filter((x) => x);
-  const breadcrumbNameMap = {
-    sector: 'Sector',
-    app: 'Application',
-    details: 'Details',
-    contact: 'Contact Us',
-    help: 'Help',
-  };
+  //const location = useLocation();
+  //const navigate = useNavigate();
+  //const pathnames = location.pathname.split('/').filter((x) => x);
+  // const breadcrumbNameMap = {
+  //   sector: 'Sector',
+  //   app: 'Application',
+  //   details: 'Details',
+  //   contact: 'Contact Us',
+  //   help: 'Help',
+  // };
 
   return (
     <>

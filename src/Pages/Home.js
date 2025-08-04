@@ -1,5 +1,4 @@
 import { Box, Fab } from '@mui/material';
-// import banner from '../images/bg2.png';
 import banner from '../images/bg3.png';
 import Slide from '@mui/material/Slide';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
@@ -31,7 +30,7 @@ function ScrollTop(props) {
           position: 'fixed',
           bottom: 16,
           right: 16,
-          zIndex: 9999, // ensures it's on top of all other content
+          zIndex: 9999,
         }}
       >
         {children}

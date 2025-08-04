@@ -23,10 +23,8 @@ import LoginIcon from '@mui/icons-material/Login';
 import { motion } from 'framer-motion';
 import AccessibilityBar from './AccessibilityBar';
 import logo from '../images/cdaclogo2.png';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import SearchComponent from './SearchComponent';
-//import { Route } from 'react-router-dom';
-
 
 export default function Navbar({ onFontSizeChange }) {
   const [mobileOpen, setMobileOpen] = useState(false);
