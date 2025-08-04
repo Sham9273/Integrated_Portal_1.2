@@ -67,7 +67,8 @@ export default function SelectActionCard() {
         <Typography
           variant="h4"
           sx={{
-            fontFamily: 'Poppins, sans-serif',
+            // fontFamily: 'Poppins, sans-serif',
+            fontFamily: 'Cambria, serif' ,
             fontWeight: 'bold',
             textDecoration: 'underline',
             color: '#0c4a88ff',
