@@ -54,7 +54,7 @@ const QuickLinksFooter = () => {
               fontSize: { xs: '0.8rem', sm: '0.9rem' },
             }}
           >
-            © 2025 Copyright: <strong>C-DAC Mumbai.</strong> All Rights Reserved
+            © 2025 Copyright: <strong>C-DAC.</strong> All Rights Reserved
           </Typography>
 
           <Typography
