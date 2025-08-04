@@ -1,6 +1,4 @@
 import { Box, Fab } from '@mui/material';
-import banner from '../images/bg3.png';
-// import banner from '../images/bg2.png';
 import banner from '../images/bg4.png';
 import Slide from '@mui/material/Slide';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
