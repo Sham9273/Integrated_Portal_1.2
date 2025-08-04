@@ -27,6 +27,7 @@ import React, { useState, useEffect } from 'react';
 import SearchComponent from './SearchComponent';
 //import { Route } from 'react-router-dom';
 
+
 export default function Navbar({ onFontSizeChange }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const theme = useTheme();
@@ -122,6 +123,12 @@ export default function Navbar({ onFontSizeChange }) {
       )}
 
       {/* Nav bar  */}
+
+
+    
+
+    {/* Nav bar  */}
+
       <AppBar
         position="fixed"
         elevation={4}
