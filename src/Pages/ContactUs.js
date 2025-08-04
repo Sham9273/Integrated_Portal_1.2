@@ -99,7 +99,7 @@ export default function ContactUs() {
                 📧 contact@cdacproject.org
               </Typography>
               <Typography variant="body1" sx={{ color: '#444' }}>
-                ☎️ +91-9876543210
+                ☎️ +91-**********
               </Typography>
             </Paper>
           </Grid>

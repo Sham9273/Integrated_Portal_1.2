@@ -31,7 +31,8 @@ const Footer = () => {
               Help us in making it better
             </Typography>
             <Typography>
-              We welcome your participation in enhancing the directory further and also invite your comments and suggestions for improvement.
+              {/* We welcome your participation in enhancing the directory further and also invite your comments and suggestions for improvement. */}
+              Help us improve the directory — share your feedback or suggestions.
             </Typography>
 
             <Divider className="footer-divider" />

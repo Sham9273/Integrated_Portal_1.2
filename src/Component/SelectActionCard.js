@@ -8,7 +8,7 @@ import { motion } from 'framer-motion';
 import FormatListBulletedSharpIcon from '@mui/icons-material/FormatListBulletedSharp';
 
 import PageHeading from './PageHeading';
-import bg2 from '../images/b2.jpg';
+import bg2 from '../images/961.jpg';
 
 // Icon Images
 import webmailicon from '../images/icons/1.png';

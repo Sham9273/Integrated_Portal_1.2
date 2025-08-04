@@ -140,11 +140,6 @@ export default function Navbar({ onFontSizeChange }) {
 
       {/* Nav bar  */}
 
-
-    
-
-      {/* Nav bar  */}
-
       <AppBar
         position="fixed"
         elevation={4}
