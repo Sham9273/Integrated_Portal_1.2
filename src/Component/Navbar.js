@@ -23,7 +23,7 @@ import LoginIcon from '@mui/icons-material/Login';
 import { motion } from 'framer-motion';
 import AccessibilityBar from './AccessibilityBar';
 import logo from '../images/CDAC3.png';
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 //import { Route } from 'react-router-dom';
 
 export default function Navbar({ onFontSizeChange }) {
@@ -36,10 +36,45 @@ export default function Navbar({ onFontSizeChange }) {
   };
 
   const menuItems = [
-    { label: 'Home', icon: <HomeIcon sx={{ color: '#4caf50' }} /> },
-    { label: 'Contact', icon: <ContactMailIcon sx={{ color: '#2196f3' }} /> },
-    { label: 'Help', icon: <HelpOutlineIcon sx={{ color: '#e8e539ff' }} /> },
-    { label: 'Login', icon: <LoginIcon sx={{ color: '#ff9800' }} /> },
+    // { label: (), icon: <HomeIcon sx={{ color: '#4caf50' }} /> },
+
+    {
+      label: (
+        <span style={{ fontSize: '0.85rem' }}>Home</span> // or '12px'
+      ),
+      icon: (
+        <HomeIcon sx={{ fontSize: 18, color: '#07720aff' }} /> // smaller icon
+      )
+    },
+    {
+      label: (
+        <span style={{ fontSize: '0.85rem' }}>Contact</span> // or '12px'
+      ),
+      icon: (
+        <ContactMailIcon sx={{ fontSize: 18, color: '#2073b7ff' }} /> // smaller icon
+      )
+    },
+    {
+      label: (
+        <span style={{ fontSize: '0.85rem' }}>Help</span> // or '12px'
+      ),
+      icon: (
+        <HelpOutlineIcon sx={{ fontSize: 18, color: '#acaa17ff' }} /> // smaller icon
+      )
+    },
+    {
+      label: (
+        <span style={{ fontSize: '0.85rem' }}>Login</span> // or '12px'
+      ),
+      icon: (
+        <LoginIcon sx={{ fontSize: 18, color: '#c78015ff' }} /> // smaller icon
+      )
+    },
+
+
+    // { label: 'Contact', icon: <ContactMailIcon sx={{ color: '#2196f3' }} /> },
+    // { label: 'Help', icon: <HelpOutlineIcon sx={{ color: '#e8e539ff' }} /> },
+    // { label: 'Login', icon: <LoginIcon sx={{ color: '#ff9800' }} /> },
   ];
 
   const drawer = (
@@ -55,14 +90,34 @@ export default function Navbar({ onFontSizeChange }) {
     </Box>
   );
 
+  ///for accesbility hidden
+
+  const [showAccessibilityBar, setShowAccessibilityBar] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowAccessibilityBar(window.scrollY < 50); // hide after 50px scroll
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <>
       <CssBaseline />
-      <AccessibilityBar onFontSizeChange={onFontSizeChange} />
-      <AppBar
+      {showAccessibilityBar && (
+        <AccessibilityBar onFontSizeChange={onFontSizeChange} />
+      )}
+      {/* <AccessibilityBar onFontSizeChange={onFontSizeChange} /> */}
+      {/* <AppBar
         position="fixed"
         elevation={4}
         sx={{
+      
+
+          mt: showAccessibilityBar ? 4 : 0,
+          transition: 'margin-top 0.3s ease',
           background: 'linear-gradient(to right, #3d4f58ff, #5696b6ff)',
           WebkitBackdropFilter: 'blur(12px) saturate(150%)',
           backdropFilter: 'blur(12px) saturate(150%)',
@@ -71,18 +126,56 @@ export default function Navbar({ onFontSizeChange }) {
         }}
       >
         <Toolbar sx={{ justifyContent: 'space-between', px: 2 }}>
-          {/* Left - Logo */}
+         
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+          > */}
+
+      <AppBar
+        position="fixed"
+        elevation={4}
+        sx={{
+          mt: showAccessibilityBar ? 4 : 0,
+          transition: 'margin-top 0.3s ease',
+          background: 'linear-gradient(to right, #4d626cff, #8fc3deff)',
+          WebkitBackdropFilter: 'blur(12px) saturate(150%)',
+          backdropFilter: 'blur(12px) saturate(150%)',
+          color: '#000',
+          zIndex: 1201,
+        }}
+      >
+        <Toolbar
+          sx={{
+            minHeight: { xs: 48, sm: 56 }, // smaller height on mobile
+            px: { xs: 1, sm: 2 },         // responsive horizontal padding
+            justifyContent: 'space-between',
+          }}
+        >
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
           >
+
+            {/* <Box
+            component="img"
+            src={logo}
+            alt="Logo"
+            sx={{ height: 30, alignSelf: 'center' }}
+          /> */}
+
             <Box
               component="img"
               src={logo}
               alt="Logo"
-              sx={{ height: 50, alignSelf: 'center' }}
+              sx={{
+                height: { xs: 24, sm: 30 }, // responsive height
+                alignSelf: 'center',
+              }}
             />
+
           </motion.div>
 
           {/* Center - Search (Hide on small) */}
@@ -102,12 +195,24 @@ export default function Navbar({ onFontSizeChange }) {
                 marginRight: 20,
               }}
             >
-              <SearchIcon sx={{ color: 'text.secondary', mr: 1 }} />
-              <InputBase
+              <SearchIcon sx={{ color: 'text.secondary', mr: 1, fontSize: 18 }} />
+              {/* <InputBase
                 placeholder="Search…"
                 inputProps={{ 'aria-label': 'search' }}
                 sx={{ flex: 1, fontSize: '1rem', color: 'text.primary' }}
+              /> */}
+
+              <InputBase
+                placeholder="Search…"
+                inputProps={{ 'aria-label': 'search' }}
+                sx={{
+                  flex: 1,
+                  fontSize: '0.85rem',
+                  color: 'text.primary',
+                  '&:focus': { outline: 'none' },
+                }}
               />
+
             </motion.div>
           )}
 
@@ -145,20 +250,21 @@ export default function Navbar({ onFontSizeChange }) {
             </Box>
           )}
         </Toolbar>
-      </AppBar>
+      </AppBar >
 
       {/* Drawer for Mobile Menu */}
-      <Drawer
+      < Drawer
         anchor="right"
         open={mobileOpen}
-        onClose={() => setMobileOpen(false)}
+        onClose={() => setMobileOpen(false)
+        }
         ModalProps={{ keepMounted: true }}
         sx={{
           '& .MuiDrawer-paper': { boxSizing: 'border-box', width: 240 },
         }}
       >
         {drawer}
-      </Drawer>
+      </Drawer >
     </>
   );
 }

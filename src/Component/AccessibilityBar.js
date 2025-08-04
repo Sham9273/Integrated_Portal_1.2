@@ -33,20 +33,21 @@ const AccessibilityBar = ({ setFontSize, darkMode, setDarkMode }) => {
     >
       <Box
         sx={{
-          mt:8,
+          mt:0,
           display: 'flex',
           justifyContent: 'flex-end',
           alignItems: 'center',
           padding: '4px 16px',
           gap: 1,
-          height: '40px',
-          background: 'linear-gradient(to right, #9dd0f1ff, #37474f)',
+          height: 'auto',
+          // background: 'linear-gradient(to right, #9dd0f1ff, #37474f)',
+          backgroundColor: 'rgb(44, 62, 80)'
         }}
       >
         {/* Accessibility Icon */}
         <Tooltip title="Accessibility Options">
-          <IconButton size="large" onClick={() => setShowOptions(!showOptions)}>
-            <AccessibilityNewIcon sx={{ fontSize: 22, color: '#fff' }} />
+          <IconButton size="small" onClick={() => setShowOptions(!showOptions)}>
+            <AccessibilityNewIcon sx={{ fontSize: 19, color: '#fff' }} />
           </IconButton>
         </Tooltip>
 
@@ -54,19 +55,19 @@ const AccessibilityBar = ({ setFontSize, darkMode, setDarkMode }) => {
         {showOptions && (
           <Stack direction="row" alignItems="center" spacing={1}>
             <Tooltip title="A+ Increase Font">
-              <IconButton size="large" onClick={increaseFont}>
+              <IconButton size="small" onClick={increaseFont}>
                 <Typography variant="body2" fontWeight="bold" sx={{ color: '#fff' }}>A+</Typography>
               </IconButton>
             </Tooltip>
 
             <Tooltip title="A- Decrease Font">
-              <IconButton size="large" onClick={decreaseFont}>
+              <IconButton size="small" onClick={decreaseFont}>
                 <Typography variant="body2" fontWeight="bold" sx={{ color: '#fff' }}>A-</Typography>
               </IconButton>
             </Tooltip>
 
             <Tooltip title="Toggle Theme">
-              <IconButton size="large" onClick={() => setDarkMode(!darkMode)}>
+              <IconButton size="small" onClick={() => setDarkMode(!darkMode)}>
                 {darkMode
                   ? <Brightness7Icon fontSize="small" sx={{ color: '#fff' }} />
                   : <Brightness4Icon fontSize="small" sx={{ color: '#fff' }} />}
@@ -74,13 +75,13 @@ const AccessibilityBar = ({ setFontSize, darkMode, setDarkMode }) => {
             </Tooltip>
 
             <Tooltip title="Toggle Line Spacing">
-              <IconButton size="large" onClick={() => setLineSpacing(!lineSpacing)}>
+              <IconButton size="small" onClick={() => setLineSpacing(!lineSpacing)}>
                 <FormatLineSpacing fontSize="small" sx={{ color: '#fff' }} />
               </IconButton>
             </Tooltip>
 
             <Tooltip title="High Contrast Mode">
-              <IconButton size="large" onClick={() => setHighContrast(!highContrast)}>
+              <IconButton size="small" onClick={() => setHighContrast(!highContrast)}>
                 <Visibility fontSize="medium" sx={{ color: '#fff' }} />
               </IconButton>
             </Tooltip>
