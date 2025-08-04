@@ -43,11 +43,11 @@ const AccessibilityBar = ({ setFontSize, darkMode, setDarkMode }) => {
         }}
       >
         {/* Static Accessibility Icon */}
-        <Tooltip title="Accessibility Options">
+        {/* <Tooltip title="Accessibility Options">
           <IconButton size="small" disabled>
             <AccessibilityNewIcon sx={{ fontSize: 19, color: '#fff' }} />
           </IconButton>
-        </Tooltip>
+        </Tooltip> */}
 
         {/* Always shown icons */}
         <Stack direction="row" alignItems="center" spacing={1}>
