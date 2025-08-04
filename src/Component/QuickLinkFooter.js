@@ -62,7 +62,7 @@ const QuickLinksFooter = () => {
             mt={1}
             sx={{ fontSize: { xs: '0.75rem', sm: '0.85rem' } }}
           >
-            Date:{' '}
+            Last Updated:{' '}
             <strong>
               {new Date().toLocaleDateString('en-US', {
                 year: 'numeric',
