@@ -5,6 +5,7 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import Fade from '@mui/material/Fade';
 import Marquee from '../Component/Marquee';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
+import SelectActionCard from '../Component/SelectActionCard';
 
 function ScrollTop(props) {
   const { children, window } = props;
@@ -57,7 +58,7 @@ export default function Home(props) {
             pt: 10,
           }}
         >
-        
+
         </Box>
 
         {/* <Box
@@ -108,6 +109,7 @@ export default function Home(props) {
 
       {/* Marquee Section */}
       <Marquee />
+      <SelectActionCard />
 
       {/* Scroll to top button (always visible on scroll) */}
       <ScrollTop {...props}>

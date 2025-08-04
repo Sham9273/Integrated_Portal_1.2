@@ -3,14 +3,28 @@ import Home from './Pages/Home';
 import Footer from './Component/Footer';
 import QuickLinkFooter from './Component/QuickLinkFooter';
 import SelectActionCard from './Component/SelectActionCard';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import ContactUs from './Pages/ContactUs'
+
 const App = () => {
   return (
     <>
+      
+
+
       <Navbar/>
-      <Home />
-      <SelectActionCard/>
-      <Footer/>
+      {/* <Home /> */}
+      {/* <SelectActionCard/> */}
+  
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/contact" element={<ContactUs />} />
+        {/* Add other routes as needed */}
+      </Routes>
+          <Footer/>
       <QuickLinkFooter/>
+
     </>
   );
 };
