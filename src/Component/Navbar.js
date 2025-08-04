@@ -41,7 +41,7 @@ export default function Navbar({ onFontSizeChange }) {
 
     {
       label: (
-        <span style={{ fontSize: '0.85rem', fontWeight: 'bold', color: 'black' }}>Home</span> // or '12px'
+        <span style={{ fontSize: '0.85rem', color: 'black' }}>Home</span> // or '12px'
       ),
       icon: (
         <HomeIcon sx={{ fontSize: 18, color: '#07720aff' }} /> // smaller icon
@@ -49,7 +49,7 @@ export default function Navbar({ onFontSizeChange }) {
     },
     {
       label: (
-        <span style={{ fontSize: '0.85rem', fontWeight: 'bold', color: 'black' }}>Contact</span> // or '12px'
+        <span style={{ fontSize: '0.85rem',  color: 'black' }}>Contact</span> // or '12px'
       ),
       icon: (
         <ContactMailIcon sx={{ fontSize: 18, color: '#2196f3' }} /> // smaller icon
@@ -57,7 +57,7 @@ export default function Navbar({ onFontSizeChange }) {
     },
     {
       label: (
-        <span style={{ fontSize: '0.85rem', fontWeight: 'bold', color: 'black' }}>Help</span> // or '12px'
+        <span style={{ fontSize: '0.85rem',  color: 'black' }}>Help</span> // or '12px'
       ),
       icon: (
         <HelpOutlineIcon sx={{ fontSize: 18, color: '#a5a322ff' }} /> // smaller icon
@@ -65,7 +65,7 @@ export default function Navbar({ onFontSizeChange }) {
     },
     {
       label: (
-        <span style={{ fontSize: '0.85rem', fontWeight: 'bold', color: 'black' }}>Login</span> // or '12px'
+        <span style={{ fontSize: '0.85rem',  color: 'black' }}>Login</span> // or '12px'
       ),
       icon: (
         <LoginIcon sx={{ fontSize: 18, color: '#ff9800' }} /> // smaller icon
@@ -145,7 +145,7 @@ export default function Navbar({ onFontSizeChange }) {
       >
         <Toolbar
           sx={{
-            minHeight: { xs: 48, sm: 38 }, // smaller height on mobile
+            minHeight: { xs: 48, sm: 40 }, // smaller height on mobile
             px: { xs: 1, sm: 2 },         // responsive horizontal padding
             justifyContent: 'space-between',
           }}
@@ -233,7 +233,7 @@ export default function Navbar({ onFontSizeChange }) {
                         '&:hover': { color: '#000' },
                       }}
                     >
-                      <b>{label}</b>
+                      {label}
                     </Typography>
                   </Box>
                 </motion.div>
