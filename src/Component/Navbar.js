@@ -145,7 +145,7 @@ export default function Navbar({ onFontSizeChange }) {
       >
         <Toolbar
           sx={{
-            minHeight: { xs: 48, sm: 56 }, // smaller height on mobile
+            minHeight: { xs: 48, sm: 38 }, // smaller height on mobile
             px: { xs: 1, sm: 2 },         // responsive horizontal padding
             justifyContent: 'space-between',
           }}
@@ -163,7 +163,7 @@ export default function Navbar({ onFontSizeChange }) {
               src={logo}
               alt="Logo"
               sx={{
-                height: { xs: 24, sm: 30 }, // responsive height
+                height: { xs: 24, sm: 28 }, // responsive height
                 alignSelf: 'center',
               }}
             />
