@@ -22,7 +22,7 @@ import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import LoginIcon from '@mui/icons-material/Login';
 import { motion } from 'framer-motion';
 import AccessibilityBar from './AccessibilityBar';
-import logo from '../images/CDAC3.png';
+import logo from '../images/cdaclogo2.png';
 import React, { useState, useEffect } from 'react';
 //import { Route } from 'react-router-dom';
 
