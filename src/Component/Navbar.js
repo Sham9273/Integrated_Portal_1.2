@@ -24,7 +24,7 @@ import { motion } from 'framer-motion';
 import AccessibilityBar from './AccessibilityBar';
 import logo from '../images/cdaclogo2.png';
 import React, { useState, useEffect } from 'react';
-//import { Route } from 'react-router-dom';
+
 
 export default function Navbar({ onFontSizeChange }) {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -36,7 +36,6 @@ export default function Navbar({ onFontSizeChange }) {
   };
 
   const menuItems = [
-    // { label: (), icon: <HomeIcon sx={{ color: '#4caf50' }} /> },
 
     {
       label: (
@@ -71,7 +70,7 @@ export default function Navbar({ onFontSizeChange }) {
       )
     },
 
-
+    // { label: (), icon: <HomeIcon sx={{ color: '#4caf50' }} /> },
     // { label: 'Contact', icon: <ContactMailIcon sx={{ color: '#2196f3' }} /> },
     // { label: 'Help', icon: <HelpOutlineIcon sx={{ color: '#e8e539ff' }} /> },
     // { label: 'Login', icon: <LoginIcon sx={{ color: '#ff9800' }} /> },
@@ -110,6 +109,8 @@ export default function Navbar({ onFontSizeChange }) {
         <AccessibilityBar onFontSizeChange={onFontSizeChange} />
       )}
     
+
+    {/* Nav bar  */}
       <AppBar
         position="fixed"
         elevation={4}
