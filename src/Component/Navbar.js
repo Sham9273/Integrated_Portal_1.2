@@ -40,7 +40,7 @@ export default function Navbar({ onFontSizeChange }) {
 
     {
       label: (
-        <span style={{ fontSize: '0.85rem' }}>Home</span> // or '12px'
+        <span style={{ fontSize: '0.85rem',fontWeight: 'bold', color: 'black' }}>Home</span> // or '12px'
       ),
       icon: (
         <HomeIcon sx={{ fontSize: 18, color: '#07720aff' }} /> // smaller icon
@@ -48,26 +48,26 @@ export default function Navbar({ onFontSizeChange }) {
     },
     {
       label: (
-        <span style={{ fontSize: '0.85rem' }}>Contact</span> // or '12px'
+        <span style={{ fontSize: '0.85rem' ,fontWeight: 'bold', color: 'black' }}>Contact</span> // or '12px'
       ),
       icon: (
-        <ContactMailIcon sx={{ fontSize: 18, color: '#2073b7ff' }} /> // smaller icon
+        <ContactMailIcon sx={{ fontSize: 18, color: '#2196f3' }} /> // smaller icon
       )
     },
     {
       label: (
-        <span style={{ fontSize: '0.85rem' }}>Help</span> // or '12px'
+        <span style={{ fontSize: '0.85rem',fontWeight: 'bold', color: 'black' }}>Help</span> // or '12px'
       ),
       icon: (
-        <HelpOutlineIcon sx={{ fontSize: 18, color: '#acaa17ff' }} /> // smaller icon
+        <HelpOutlineIcon sx={{ fontSize: 18, color: '#a5a322ff' }} /> // smaller icon
       )
     },
     {
       label: (
-        <span style={{ fontSize: '0.85rem' }}>Login</span> // or '12px'
+        <span style={{ fontSize: '0.85rem' ,fontWeight: 'bold', color: 'black' }}>Login</span> // or '12px'
       ),
       icon: (
-        <LoginIcon sx={{ fontSize: 18, color: '#c78015ff' }} /> // smaller icon
+        <LoginIcon sx={{ fontSize: 18, color: '#ff9800' }} /> // smaller icon
       )
     },
 
@@ -109,37 +109,15 @@ export default function Navbar({ onFontSizeChange }) {
       {showAccessibilityBar && (
         <AccessibilityBar onFontSizeChange={onFontSizeChange} />
       )}
-      {/* <AccessibilityBar onFontSizeChange={onFontSizeChange} /> */}
-      {/* <AppBar
-        position="fixed"
-        elevation={4}
-        sx={{
-      
-
-          mt: showAccessibilityBar ? 4 : 0,
-          transition: 'margin-top 0.3s ease',
-          background: 'linear-gradient(to right, #3d4f58ff, #5696b6ff)',
-          WebkitBackdropFilter: 'blur(12px) saturate(150%)',
-          backdropFilter: 'blur(12px) saturate(150%)',
-          color: '#000',
-          zIndex: 1201,
-        }}
-      >
-        <Toolbar sx={{ justifyContent: 'space-between', px: 2 }}>
-         
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
-          > */}
-
+    
       <AppBar
         position="fixed"
         elevation={4}
         sx={{
           mt: showAccessibilityBar ? 4 : 0,
           transition: 'margin-top 0.3s ease',
-          background: 'linear-gradient(to right, #4d626cff, #8fc3deff)',
+          // background: 'linear-gradient(to right, #c3e1f0ff, #8fc3deff)',
+          background : '#c3e1f0ff',
           WebkitBackdropFilter: 'blur(12px) saturate(150%)',
           backdropFilter: 'blur(12px) saturate(150%)',
           color: '#000',
@@ -159,12 +137,7 @@ export default function Navbar({ onFontSizeChange }) {
             transition={{ duration: 1 }}
           >
 
-            {/* <Box
-            component="img"
-            src={logo}
-            alt="Logo"
-            sx={{ height: 30, alignSelf: 'center' }}
-          /> */}
+            
 
             <Box
               component="img"
@@ -196,11 +169,7 @@ export default function Navbar({ onFontSizeChange }) {
               }}
             >
               <SearchIcon sx={{ color: 'text.secondary', mr: 1, fontSize: 18 }} />
-              {/* <InputBase
-                placeholder="Search…"
-                inputProps={{ 'aria-label': 'search' }}
-                sx={{ flex: 1, fontSize: '1rem', color: 'text.primary' }}
-              /> */}
+             
 
               <InputBase
                 placeholder="Search…"
