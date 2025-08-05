@@ -3,7 +3,6 @@ import {
   Toolbar,
   Box,
   Typography,
-  // InputBase,
   CssBaseline,
   IconButton,
   Drawer,
@@ -15,7 +14,6 @@ import {
 } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
-//import SearchIcon from '@mui/icons-material/Search';
 import HomeIcon from '@mui/icons-material/Home';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
@@ -23,21 +21,15 @@ import LoginIcon from '@mui/icons-material/Login';
 import { motion } from 'framer-motion';
 import AccessibilityBar from './AccessibilityBar';
 import logo from '../images/cdaclogo2.png';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import SearchComponent from './SearchComponent';
 import { useNavigate } from 'react-router-dom';
 
-
-
-export default function Navbar({ onFontSizeChange }) {
+export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const navigate = useNavigate();
-
-  // const handleNavigation = (page) => {
-  //   console.log(`Navigating to ${page}`);
-  // };
 
   const handleNavigation = (page) => {
     switch (page) {
@@ -48,13 +40,13 @@ export default function Navbar({ onFontSizeChange }) {
         navigate('/contact');
         break;
       case 'help':
-        navigate('/help'); // if you have one
+        navigate('/help');
         break;
       case 'login':
-        navigate('/login'); // if you have one
+        navigate('/login');
         break;
       case 'aboutus':
-        navigate('/aboutus'); // if you have one
+        navigate('/aboutus');
         break;
       default:
         break;
@@ -62,40 +54,21 @@ export default function Navbar({ onFontSizeChange }) {
   };
 
   const menuItems = [
-
     {
-      // label: (
-      //   <span style={{ fontSize: '0.85rem', color: 'black' }}>Home</span> // or '12px'
-      // ),
       label: 'Home',
-      icon: (
-        <HomeIcon sx={{ fontSize: 18, color: '#07720aff' }} /> // smaller icon
-      )
+      icon: <HomeIcon sx={{ fontSize: 18, color: '#07720aff' }} />
     },
     {
-
       label: 'Contact',
-      icon: (
-        <ContactMailIcon sx={{ fontSize: 18, color: '#2196f3' }} /> // smaller icon
-      )
+      icon: <ContactMailIcon sx={{ fontSize: 18, color: '#2196f3' }} />
     },
     {
-      // label: (
-      //   <span style={{ fontSize: '0.85rem', color: 'black' }}>Help</span> // or '12px'
-      // ),
       label: 'Help',
-      icon: (
-        <HelpOutlineIcon sx={{ fontSize: 18, color: '#a5a322ff' }} /> // smaller icon
-      )
+      icon: <HelpOutlineIcon sx={{ fontSize: 18, color: '#a5a322ff' }} />
     },
     {
-      // label: (
-      //   <span style={{ fontSize: '0.85rem', color: 'black' }}>Login</span> // or '12px'
-      // ),
       label: 'Login',
-      icon: (
-        <LoginIcon sx={{ fontSize: 18, color: '#ff9800' }} /> // smaller icon
-      )
+      icon: <LoginIcon sx={{ fontSize: 18, color: '#ff9800' }} />
     },
   ];
 
@@ -105,11 +78,8 @@ export default function Navbar({ onFontSizeChange }) {
         {menuItems.map(({ label, icon }) => (
           <ListItem button key={label} onClick={() => handleNavigation(label.toLowerCase())}>
             <ListItemIcon>{icon}</ListItemIcon>
-            {/* <ListItemText primary={label} /> */}
             <ListItemText primary={
-              <span style={{ fontSize: '0.85rem', color: 'black' }}>
-                {label}
-              </span>
+              <span style={{ fontSize: '0.85rem', color: 'black' }}>{label}</span>
             } />
           </ListItem>
         ))}
@@ -117,134 +87,352 @@ export default function Navbar({ onFontSizeChange }) {
     </Box>
   );
 
-  const [showAccessibilityBar, setShowAccessibilityBar] = useState(true);
   const [darkMode, setDarkMode] = useState(false);
-
-// const [fontSize, setFontSize] = useState(16);
-
-// useEffect(() => {
-//   document.documentElement.style.setProperty('--global-font-size', `${fontSize}px`);
-// }, [fontSize]);
-
-
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowAccessibilityBar(window.scrollY < 50); // hide after 50px scroll
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   return (
     <>
       <CssBaseline />
-      {showAccessibilityBar && (
+
+      {/* Sticky AccessibilityBar + Navbar */}
+
+      <Box sx={{ position: 'fixed', top: 0, width: '100%', zIndex: 1201 }}>
         <AccessibilityBar
-          // setFontSize={setFontSize}
           darkMode={darkMode}
           setDarkMode={setDarkMode}
         />
-      )}
 
-      {/* Nav bar  */}
-
-      <AppBar
-        position="fixed"
-        elevation={4}
-        sx={{
-          mt: showAccessibilityBar ? 4 : 0,
-          transition: 'margin-top 0.3s ease',
-          background: '#c3e1f0ff',
-          WebkitBackdropFilter: 'blur(12px) saturate(150%)',
-          backdropFilter: 'blur(12px) saturate(150%)',
-          color: '#000',
-          zIndex: 1201,
-        }}
-      >
-        <Toolbar
+        <AppBar
+          position="static"
+          elevation={4}
           sx={{
-            minHeight: { xs: 48, sm: 40 }, // smaller height on mobile
-            px: { xs: 1, sm: 2 },         // responsive horizontal padding
-            justifyContent: 'space-between',
+            background: 'linear-gradient(to right, #96d0edff, #f1f4f6ff)',
+            WebkitBackdropFilter: 'blur(12px) saturate(150%)',
+            backdropFilter: 'blur(12px) saturate(150%)',
+            color: '#000',
           }}
         >
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
+          <Toolbar
+            sx={{
+              minHeight: { xs: 48, sm: 40 },
+              px: { xs: 1, sm: 2 },
+              justifyContent: 'space-between',
+            }}
           >
-            <Box
-              component="img"
-              src={logo}
-              alt="Logo"
-              sx={{
-                height: { xs: 24, sm: 28 }, // responsive height
-                alignSelf: 'center',
-              }}
-            />
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1 }}
+            >
+              <Box
+                component="img"
+                src={logo}
+                alt="Logo"
+                sx={{
+                  height: { xs: 24, sm: 28 },
+                  alignSelf: 'center',
+                }}
+              />
+            </motion.div>
 
-          </motion.div>
+            {isMobile ? (
+              <IconButton color="inherit" onClick={() => setMobileOpen(true)}>
+                <MenuIcon />
+              </IconButton>
+            ) : (
+              <Box sx={{ display: 'flex', gap: 3 }}>
+                <SearchComponent />
+                {menuItems.map(({ label, icon }) => (
+                  <motion.div
+                    key={label}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    style={{ cursor: 'pointer' }}
+                    onClick={() => handleNavigation(label.toLowerCase())}
+                  >
+                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                      {icon}
+                      <Typography
+                        variant="button"
+                        sx={{
+                          color: '#fff',
+                          fontWeight: 400,
+                          fontSize: '0.95rem',
+                          '&:hover': { color: '#000' },
+                        }}
+                      >
+                        <span style={{ fontSize: '0.85rem', color: 'black', fontFamily: 'Cambria, serif' }}>
+                          {label}
+                        </span>
+                      </Typography>
+                    </Box>
+                  </motion.div>
+                ))}
+              </Box>
+            )}
+          </Toolbar>
+        </AppBar>
+      </Box>
 
-          {/* Center - Search (Hide on small) */}
-          {/* Right - Nav Items or Menu Icon */}
-          {isMobile ? (
-            <IconButton color="inherit" onClick={() => setMobileOpen(true)}>
-              <MenuIcon />
-            </IconButton>
-          ) : (
-            <Box sx={{ display: 'flex', gap: 3 }}>
-              {/* 🔍 Search bar with toggle (center) */}
-              <SearchComponent />
-              {menuItems.map(({ label, icon }) => (
-                <motion.div
-                  key={label}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  style={{ cursor: 'pointer' }}
-                  onClick={() => handleNavigation(label.toLowerCase())}
-                >
-                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                    {icon}
-                    <Typography
-                      variant="button"
-                      sx={{
-                        color: '#fff',
-                        fontWeight: 400,
-                        fontSize: '0.95rem',
-                        '&:hover': { color: '#000' },
-                      }}
-                    // onClick={handleNavigation}
-                    >
-                      <span style={{ fontSize: '0.85rem', color: 'black', fontFamily: 'Cambria, serif' }}>
-                        {label}
-                      </span>
-                    </Typography>
-                  </Box>
-                </motion.div>
-              ))}
-            </Box>
-          )}
-        </Toolbar>
-      </AppBar >
+      {/* Margin top to prevent content from hiding under fixed header */}
+      <Box sx={{ mt: '80px' }} />
 
-      {/* Drawer for Mobile Menu */}
-      < Drawer
+      {/* Drawer for mobile menu */}
+      <Drawer
         anchor="right"
         open={mobileOpen}
-        onClose={() => setMobileOpen(false)
-        }
+        onClose={() => setMobileOpen(false)}
         ModalProps={{ keepMounted: true }}
         sx={{
           '& .MuiDrawer-paper': { boxSizing: 'border-box', width: 240 },
         }}
       >
         {drawer}
-      </Drawer >
+      </Drawer>
     </>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import {
+//   AppBar,
+//   Toolbar,
+//   Box,
+//   Typography,
+//   // InputBase,
+//   CssBaseline,
+//   IconButton,
+//   Drawer,
+//   List,
+//   ListItem,
+//   ListItemIcon,
+//   ListItemText,
+//   useMediaQuery,
+// } from '@mui/material';
+// import { useTheme } from '@mui/material/styles';
+// import MenuIcon from '@mui/icons-material/Menu';
+// //import SearchIcon from '@mui/icons-material/Search';
+// import HomeIcon from '@mui/icons-material/Home';
+// import ContactMailIcon from '@mui/icons-material/ContactMail';
+// import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+// import LoginIcon from '@mui/icons-material/Login';
+// import { motion } from 'framer-motion';
+// import AccessibilityBar from './AccessibilityBar';
+// import logo from '../images/cdaclogo2.png';
+// import { useState, useEffect } from 'react';
+// import SearchComponent from './SearchComponent';
+// import { useNavigate } from 'react-router-dom';
+
+// export default function Navbar({ onFontSizeChange }) {
+//   const [mobileOpen, setMobileOpen] = useState(false);
+//   const theme = useTheme();
+//   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+//   const navigate = useNavigate();
+
+//   const handleNavigation = (page) => {
+//     switch (page) {
+//       case 'home':
+//         navigate('/intportal');
+//         break;
+//       case 'contact':
+//         navigate('/contact');
+//         break;
+//       case 'help':
+//         navigate('/help'); // if you have one
+//         break;
+//       case 'login':
+//         navigate('/login'); // if you have one
+//         break;
+//       case 'aboutus':
+//         navigate('/aboutus'); // if you have one
+//         break;
+//       default:
+//         break;
+//     }
+//   };
+
+//   const menuItems = [
+
+//     {
+//       label: 'Home',
+//       icon: (
+//         <HomeIcon sx={{ fontSize: 18, color: '#07720aff' }} /> // smaller icon
+//       )
+//     },
+//     {
+
+//       label: 'Contact',
+//       icon: (
+//         <ContactMailIcon sx={{ fontSize: 18, color: '#2196f3' }} /> // smaller icon
+//       )
+//     },
+//     {
+//       label: 'Help',
+//       icon: (
+//         <HelpOutlineIcon sx={{ fontSize: 18, color: '#a5a322ff' }} /> // smaller icon
+//       )
+//     },
+//     {
+//       label: 'Login',
+//       icon: (
+//         <LoginIcon sx={{ fontSize: 18, color: '#ff9800' }} /> // smaller icon
+//       )
+//     },
+//   ];
+
+//   const drawer = (
+//     <Box onClick={() => setMobileOpen(false)} sx={{ width: 240 }}>
+//       <List>
+//         {menuItems.map(({ label, icon }) => (
+//           <ListItem button key={label} onClick={() => handleNavigation(label.toLowerCase())}>
+//             <ListItemIcon>{icon}</ListItemIcon>
+//             <ListItemText primary={
+//               <span style={{ fontSize: '0.85rem', color: 'black' }}>
+//                 {label}
+//               </span>
+//             } />
+//           </ListItem>
+//         ))}
+//       </List>
+//     </Box>
+//   );
+
+//   const [showAccessibilityBar, setShowAccessibilityBar] = useState(true);
+//   const [darkMode, setDarkMode] = useState(false);
+
+//   // useEffect(() => {
+//   //   const handleScroll = () => {
+//   //     setShowAccessibilityBar(window.scrollY < 50); // hide after 50px scroll
+//   //   };
+
+//   //   window.addEventListener('scroll', handleScroll);
+//   //   return () => window.removeEventListener('scroll', handleScroll);
+//   // }, []);
+
+//   return (
+//     <>
+//       <CssBaseline />
+//       {showAccessibilityBar && (
+//         <AccessibilityBar
+//           // setFontSize={setFontSize}
+//           darkMode={darkMode}
+//           setDarkMode={setDarkMode}
+//         />
+//       )}
+
+//       {/* Nav bar  */}
+//       <AppBar
+//         position="fixed"
+//         elevation={4}
+//         sx={{
+//           mt: showAccessibilityBar ? 4 : 0,
+//           transition: 'margin-top 0.3s ease',
+//           //background: '#c3e1f0ff',
+//            background: 'linear-gradient(to right, #c3e1f0ff, #f1f4f6ff)',
+//           //background: 'linear-gradient(90deg, rgba(195, 225, 240, 1) 0%, rgba(255, 255, 255, 1) 100%)',
+//           WebkitBackdropFilter: 'blur(12px) saturate(150%)',
+//           backdropFilter: 'blur(12px) saturate(150%)',
+//           color: '#000',
+//           zIndex: 1201,
+//         }}
+//       >
+//         <Toolbar
+//           sx={{
+//             minHeight: { xs: 48, sm: 40 }, // smaller height on mobile
+//             px: { xs: 1, sm: 2 },         // responsive horizontal padding
+//             justifyContent: 'space-between',
+//           }}
+//         >
+//           <motion.div
+//             initial={{ opacity: 0, x: -30 }}
+//             animate={{ opacity: 1, x: 0 }}
+//             transition={{ duration: 1 }}
+//           >
+//             <Box
+//               component="img"
+//               src={logo}
+//               alt="Logo"
+//               sx={{
+//                 height: { xs: 24, sm: 28 }, // responsive height
+//                 alignSelf: 'center',
+//               }}
+//             />
+
+//           </motion.div>
+
+//           {/* Center - Search (Hide on small) */}
+//           {/* Right - Nav Items or Menu Icon */}
+//           {isMobile ? (
+//             <IconButton color="inherit" onClick={() => setMobileOpen(true)}>
+//               <MenuIcon />
+//             </IconButton>
+//           ) : (
+//             <Box sx={{ display: 'flex', gap: 3 }}>
+//               {/* 🔍 Search bar with toggle (center) */}
+//               <SearchComponent />
+//               {menuItems.map(({ label, icon }) => (
+//                 <motion.div
+//                   key={label}
+//                   whileHover={{ scale: 1.05 }}
+//                   whileTap={{ scale: 0.95 }}
+//                   style={{ cursor: 'pointer' }}
+//                   onClick={() => handleNavigation(label.toLowerCase())}
+//                 >
+//                   <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+//                     {icon}
+//                     <Typography
+//                       variant="button"
+//                       sx={{
+//                         color: '#fff',
+//                         fontWeight: 400,
+//                         fontSize: '0.95rem',
+//                         '&:hover': { color: '#000' },
+//                       }}
+//                     // onClick={handleNavigation}
+//                     >
+//                       <span style={{ fontSize: '0.85rem', color: 'black', fontFamily: 'Cambria, serif' }}>
+//                         {label}
+//                       </span>
+//                     </Typography>
+//                   </Box>
+//                 </motion.div>
+//               ))}
+//             </Box>
+//           )}
+//         </Toolbar>
+//       </AppBar >
+
+//       {/* Drawer for Mobile Menu */}
+//       < Drawer
+//         anchor="right"
+//         open={mobileOpen}
+//         onClose={() => setMobileOpen(false)
+//         }
+//         ModalProps={{ keepMounted: true }}
+//         sx={{
+//           '& .MuiDrawer-paper': { boxSizing: 'border-box', width: 240 },
+//         }}
+//       >
+//         {drawer}
+//       </Drawer >
+//     </>
+//   );
+// }
 
 
 

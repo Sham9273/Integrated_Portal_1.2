@@ -51,7 +51,7 @@ export default function Home(props) {
       <Slide in={true} direction="down" timeout={600}>
         <Box
           sx={{
-            height: '65vh',
+            height: '270px',
             backgroundImage: `url(${banner})`,
             backgroundSize: '100% 100%',
             backgroundPosition: 'center',
