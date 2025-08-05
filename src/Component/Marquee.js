@@ -16,6 +16,7 @@ const Marquee = () => {
         position: 'relative',
         py: { xs: 0.5, sm: 0.1 }, // Smaller padding, responsive
         fontSize: { xs: '0.75rem', sm: '0.5rem' }, // Responsive text size
+        
       }}
     >
       <Typography
