@@ -1,0 +1,190 @@
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
+import CardActionArea from '@mui/material/CardActionArea';
+import { motion } from 'framer-motion';
+import FormatListBulletedSharpIcon from '@mui/icons-material/FormatListBulletedSharp';
+
+import PageHeading from './PageHeading';
+import bg2 from '../images/b2.jpg';
+
+// Icon Images
+import webmailicon from '../images/icons/1.png';
+import ihrmsicon from '../images/icons/2.png';
+import eMulazimicon from '../images/icons/3.png';
+import APARicon from '../images/icons/4.png';
+import AssetManagementicon from '../images/icons/5.png';
+import HelpDeskicon from '../images/icons/6.png';
+import VistorManagementicon from '../images/icons/7.png';
+import ProjectManagementicon from '../images/icons/8.png';
+import CAKESicon from '../images/icons/9.png';
+import CorporateLearningDevelopmentPlatformicon from '../images/icons/10.png';
+import CDACWebsiteicon from '../images/icons/11.png';
+import IntranetPortalicon from '../images/icons/12.png';
+import { Button, Stack } from '@mui/material';
+import { AnimatePresence } from 'framer-motion';
+const cards = [
+  { id: 1, title: 'Webmail', icon: webmailicon },
+  { id: 2, title: 'IHRMS', icon: ihrmsicon },
+  { id: 3, title: 'eMulazim', icon: eMulazimicon },
+  { id: 4, title: 'APAR', icon: APARicon },
+  { id: 5, title: 'Asset Management', icon: AssetManagementicon },
+  { id: 6, title: 'Help Desk', icon: HelpDeskicon },
+  { id: 7, title: 'Visitor Management', icon: VistorManagementicon },
+  { id: 8, title: 'Project Management', icon: ProjectManagementicon },
+  { id: 9, title: 'CAKES', icon: CAKESicon },
+  { id: 10, title: 'Corporate Learning & Development Platform', icon: CorporateLearningDevelopmentPlatformicon },
+  { id: 11, title: 'CDAC Website', icon: CDACWebsiteicon },
+  { id: 12, title: 'Intranet Portal', icon: IntranetPortalicon },
+];
+
+export default function SelectActionCard() {
+  const [selectedCard, setSelectedCard] = React.useState(null);
+
+  const [page, setPage] = React.useState(1);
+  const cardsPerPage = 12;
+
+  // Calculate paginated data
+  const indexOfLastCard = page * cardsPerPage;
+  const indexOfFirstCard = indexOfLastCard - cardsPerPage;
+  const currentCards = cards.slice(indexOfFirstCard, indexOfLastCard);
+  const totalPages = Math.ceil(cards.length / cardsPerPage);
+
+  return (
+    <Box
+      sx={{
+        backgroundImage: `url(${bg2})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        px: 4,
+        py: 3,
+      }}
+    >
+      <PageHeading />
+
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          mb: 4,
+        }}
+      >
+        <FormatListBulletedSharpIcon sx={{ fontSize: '3rem', color: 'grey', mr: 1 }} />
+        <Typography
+          variant="h4"
+          sx={{
+            // fontFamily: 'Poppins, sans-serif',
+            fontFamily: 'Cambria, serif',
+            fontWeight: 'bold',
+            textDecoration: 'underline',
+            color: '#0c4a88ff',
+          }}
+        >
+          Services
+        </Typography>
+      </Box>
+
+      <hr />
+      <br />
+
+      <Box
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+          gap: 3,
+        }}
+      >
+        {currentCards.map((card, index) => (
+          <motion.div
+            key={card.id}
+            initial={{ x: index % 2 === 0 ? -150 : 150, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{
+              duration: 0.5,
+              delay: index * 0.1,
+              type: 'spring',
+              stiffness: 100,
+            }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.97 }}
+          >
+            <Card
+              elevation={selectedCard === index ? 10 : 3}
+              sx={{
+                height: '220px',
+                borderRadius: '10px',
+                transition: 'all 0.3s ease-in-out',
+                transform: selectedCard === index ? 'scale(1.02)' : 'scale(1)',
+                border:
+                  selectedCard === index ? '2px solid #1976d2' : '1px solid #ccc',
+                backgroundColor: 'rgba(255, 255, 255, 0.9)',
+              }}
+            >
+              <CardActionArea onClick={() => setSelectedCard(index)} sx={{ height: '100%' }}>
+                <CardContent sx={{ height: '100%' }}>
+                  <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                    <Box sx={{ mb: 1 }}>
+                      <img
+                        src={card.icon}
+                        alt={`${card.title} Icon`}
+                        style={{ width: '40px', height: '40px' }}
+                      />
+                    </Box>
+                    <Typography
+                      variant="h6"
+                      component="div"
+                      sx={{
+                        fontWeight: 600,
+                        mb: 1,
+                        color: '#1976d2',
+                        textAlign: 'center',
+                      }}
+                    >
+                      {card.title}
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      color="text.secondary"
+                      sx={{ textAlign: 'center', fontStyle: 'italic' }}
+                    >
+                      Coming Soon
+                    </Typography>
+                  </Box>
+                </CardContent>
+              </CardActionArea>
+            </Card>
+
+          </motion.div>
+        ))}
+      </Box>
+      <Stack direction="row" justifyContent="center" spacing={2} mt={4}>
+        <Button
+          variant="contained"
+          disabled={page === 1}
+          onClick={() => setPage((prev) => prev - 1)}
+        >
+          Previous
+        </Button>
+
+        <Typography variant="body2" sx={{ alignSelf: 'center' }}>
+          Page {page} of {totalPages}
+        </Typography>
+
+        <Button
+          variant="contained"
+          disabled={page === totalPages}
+          onClick={() => setPage((prev) => prev + 1)}
+        >
+          Next
+        </Button>
+      </Stack>
+
+      <br />
+      <br />
+    </Box>
+  );
+}
