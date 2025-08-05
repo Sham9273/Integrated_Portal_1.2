@@ -8,9 +8,24 @@ import {
 } from '@mui/icons-material';
 import { motion } from 'framer-motion';
 
-const AccessibilityBar = ({ setFontSize, darkMode, setDarkMode }) => {
-  const increaseFont = () => setFontSize(prev => Math.min(prev + 2, 24));
-  const decreaseFont = () => setFontSize(prev => Math.max(prev - 2, 12));
+const AccessibilityBar = ({  darkMode, setDarkMode }) => {
+
+const [fontSize, setFontSize] = useState(16); // default size
+
+const increaseFont = () => {
+  const newSize = Math.min(22, fontSize + 2); // cap at 22px
+  setFontSize(newSize);
+  document.documentElement.style.fontSize = `${newSize}px`;
+};
+
+const decreaseFont = () => {
+   const newSize = Math.max(12, fontSize - 2); // don't go below 12px
+  setFontSize(newSize);
+  document.documentElement.style.fontSize = `${newSize}px`;
+};
+
+
+
 
   const [lineSpacing, setLineSpacing] = useState(false);
   const [highContrast, setHighContrast] = useState(false);
@@ -45,7 +60,7 @@ const AccessibilityBar = ({ setFontSize, darkMode, setDarkMode }) => {
 
         <Stack direction="row" alignItems="center" spacing={1}>
           <Tooltip title="A+ Increase Font">
-            <IconButton size="small" onClick={increaseFont}>
+            <IconButton size="small" onClick={increaseFont} >
               <Typography variant="body2" fontWeight="bold" sx={{ color: '#fff' }}>A+</Typography>
             </IconButton>
           </Tooltip>
