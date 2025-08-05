@@ -6,6 +6,7 @@ import SelectActionCard from './Component/SelectActionCard';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import ContactUs from './Pages/ContactUs'
+import LoginPage from './Component/Login';
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
       <Routes>
         <Route path="/intportal" element={<Home />} />
         <Route path="/contact" element={<ContactUs />} />
+         <Route path="/login" element={<LoginPage />} />
         {/* Add other routes as needed */}
       </Routes>
           <Footer/>

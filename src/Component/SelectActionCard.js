@@ -65,7 +65,7 @@ export default function SelectActionCard() {
       >
         <FormatListBulletedSharpIcon sx={{ fontSize: '3rem', color: 'grey', mr: 1 }} />
         <Typography
-          variant="h4"
+          variant="h3"
           sx={{
             // fontFamily: 'Poppins, sans-serif',
             fontFamily: 'Cambria, serif' ,
