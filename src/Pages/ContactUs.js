@@ -25,7 +25,7 @@ export default function ContactUs() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Submitted:', formData);
-    alert('Message sent! (You can replace this with actual logic)');
+    alert('Message sent! (We can replace this with actual logic)');
     setFormData({ name: '', email: '', message: '' });
   };
 
@@ -44,7 +44,7 @@ export default function ContactUs() {
         </Typography>
 
         <Grid container spacing={4}>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={8} md={6}>
             <Paper elevation={3} sx={{ p: 4 }}>
               <form onSubmit={handleSubmit}>
                 <TextField
@@ -93,7 +93,8 @@ export default function ContactUs() {
                 Reach Us At
               </Typography>
               <Typography variant="body1" sx={{ color: '#444', mb: 1 }}>
-                📍 CDAC Innovation Center, Mumbai, Maharashtra, India
+                📍 Centre for Development of Advanced Computing
+                Gulmohar Cross Road No. 9,Juhu, Mumbai - 400 049.
               </Typography>
               <Typography variant="body1" sx={{ color: '#444', mb: 1 }}>
                 📧 contact@cdacproject.org

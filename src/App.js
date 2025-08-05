@@ -10,9 +10,6 @@ import ContactUs from './Pages/ContactUs'
 const App = () => {
   return (
     <>
-      
-
-
       <Navbar/>
       {/* <Home /> */}
       {/* <SelectActionCard/> */}
@@ -20,11 +17,11 @@ const App = () => {
       <Routes>
         <Route path="/intportal" element={<Home />} />
         <Route path="/contact" element={<ContactUs />} />
+        {/* <Route path="/aboutus" element={<AboutUs/>}/> */}
         {/* Add other routes as needed */}
       </Routes>
           <Footer/>
       <QuickLinkFooter/>
-
     </>
   );
 };

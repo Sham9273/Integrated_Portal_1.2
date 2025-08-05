@@ -58,7 +58,6 @@ export default function Home(props) {
             pt: 10,
           }}
         >
-
         </Box>
       </Slide>
 
@@ -75,6 +74,3 @@ export default function Home(props) {
     </>
   );
 }
-
-
-
