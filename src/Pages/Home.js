@@ -1,5 +1,5 @@
 import { Box, Fab } from '@mui/material';
-import banner from '../images/bg4.png';
+import banner from '../images/bg5.png';
 import Slide from '@mui/material/Slide';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import Fade from '@mui/material/Fade';
@@ -48,10 +48,10 @@ export default function Home(props) {
       <Box sx={{ height: 0 }} id="back-to-top-anchor" />
 
       {/* Banner Section */}
-      <Slide in={true} direction="down" timeout={600}>
+      {/* <Slide in={true} direction="down" timeout={600}>
         <Box
           sx={{
-            height: '65vh',
+            height: '350px',
             backgroundImage: `url(${banner})`,
             backgroundSize: '100% 100%',
             backgroundPosition: 'center',
@@ -59,9 +59,23 @@ export default function Home(props) {
             pt: 10,
           }}
         >
-
+        </Box>
+      </Slide> */}
+      {/* Banner Section */}
+      <Slide in={true} direction="down" timeout={600}>
+        <Box sx={{ textAlign: 'center', pt: 0 }}>
+          <img
+            src={banner}
+            alt="Banner"
+            style={{
+              width: '100%',
+              //height: '350px',
+              objectFit: 'cover',
+            }}
+          />
         </Box>
       </Slide>
+
 
       {/* Marquee Section */}
       <Marquee />
@@ -77,6 +91,3 @@ export default function Home(props) {
     </>
   );
 }
-
-
-
