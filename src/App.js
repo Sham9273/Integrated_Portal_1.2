@@ -18,7 +18,7 @@ const App = () => {
       {/* <SelectActionCard/> */}
   
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/intportal" element={<Home />} />
         <Route path="/contact" element={<ContactUs />} />
         {/* Add other routes as needed */}
       </Routes>
