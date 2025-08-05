@@ -93,13 +93,13 @@ export default function ContactUs() {
                 Reach Us At
               </Typography>
               <Typography variant="body1" sx={{ color: '#444', mb: 1 }}>
-                📍 CDAC Innovation Center, Pune, Maharashtra, India
+                📍 CDAC Innovation Center, Mumbai, Maharashtra, India
               </Typography>
               <Typography variant="body1" sx={{ color: '#444', mb: 1 }}>
                 📧 contact@cdacproject.org
               </Typography>
               <Typography variant="body1" sx={{ color: '#444' }}>
-                ☎️ +91-9876543210
+                ☎️ +91-**********
               </Typography>
             </Paper>
           </Grid>

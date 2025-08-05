@@ -1,5 +1,4 @@
 import './Footer.css';
-
 import {
   Box,
   Typography,
@@ -27,14 +26,17 @@ const Footer = () => {
       <Box className="footer-content">
         <Fade in timeout={1500}>
           <Box textAlign="center">
-            <Typography variant="h5" fontWeight="bold" gutterBottom color='#000'sx={{textDecoration:'underline'}}>
+            <Typography variant="h5" fontWeight="bold" fontFamily={'Cambria, serif'} gutterBottom color='#000' sx={{ textDecoration: 'underline' }}>
               Help us in making it better
             </Typography>
-            <Typography>
+            <Typography color='#2c3e50' fontFamily={'Cambria, serif'}>
               We welcome your participation in enhancing the directory further and also invite your comments and suggestions for improvement.
+              {/* Help us improve the directory — share your feedback or suggestions. */}
             </Typography>
 
             <Divider className="footer-divider" />
+            <br />
+
             <Stack
               spacing={1}
               direction={{ xs: 'column', sm: 'row' }}
@@ -44,6 +46,7 @@ const Footer = () => {
               gap={2}
               mb={3}
             >
+
               <Link href="#" className="footer-link">
                 <LinkIcon fontSize="small" className="link-icon" />
                 Link To Us
@@ -54,7 +57,7 @@ const Footer = () => {
               </Link>
             </Stack>
 
-            <Typography variant="h6" fontWeight="bold" gutterBottom color='#000'>
+            <Typography variant="h6" fontWeight="bold" gutterBottom color='#000' fontFamily={'Cambria, serif'}>
               Connect With Us
             </Typography>
 
