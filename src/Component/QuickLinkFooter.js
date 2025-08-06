@@ -1,5 +1,6 @@
-import { Box, Stack, Link, Typography, Fade, Slide } from '@mui/material';
-
+import { Box, Stack, Typography, Fade, Slide } from '@mui/material';
+import { Link as MuiLink } from '@mui/material';
+import { Link as RouterLink } from 'react-router-dom';
 const QuickLinksFooter = () => {
   return (
     <Box
@@ -18,9 +19,9 @@ const QuickLinksFooter = () => {
           justifyContent="center"
           alignItems="center"
           flexWrap="wrap"
-          sx={{ mb: 2 }}
+          sx={{ mb: 2, fontFamily: 'Cambria, serif' }}
         >
-          {[
+          {/* {[
             'About Us',
             'Help',
             'Sitemap',
@@ -42,6 +43,31 @@ const QuickLinksFooter = () => {
             >
               {text}
             </Link>
+          ))} */}
+          {[
+            { text: 'About Us', to: '/aboutus' },
+            { text: 'Help', to: '/help' },
+            { text: 'Sitemap', to: '#' },
+            { text: 'Website Policies', to: '/websitepolicy' },
+            { text: 'Feedback', to: '/feedback' },
+            { text: 'Contact Us', to: '/contact' },
+          ].map(({ text, to }, idx) => (
+            <MuiLink
+              key={idx}
+              component={to !== '#' ? RouterLink : 'a'}
+              to={to !== '#' ? to : undefined}
+              href={to === '#' ? '#' : undefined}
+              underline="none"
+              sx={{
+                color: '#f1f1f1',
+                fontSize: { xs: '0.9rem', sm: '1rem' },
+                '&:hover': {
+                  color: '#00e5ff',
+                },
+              }}
+            >
+              {text}
+            </MuiLink>
           ))}
         </Stack>
       </Slide>
@@ -52,6 +78,7 @@ const QuickLinksFooter = () => {
             variant="body2"
             sx={{
               fontSize: { xs: '0.8rem', sm: '0.9rem' },
+              fontFamily: 'Cambria, serif',
             }}
           >
             © 2025 Copyright: <strong>C-DAC.</strong> All Rights Reserved
@@ -60,7 +87,10 @@ const QuickLinksFooter = () => {
           <Typography
             variant="body2"
             mt={1}
-            sx={{ fontSize: { xs: '0.75rem', sm: '0.85rem' } }}
+            sx={{
+              fontSize: { xs: '0.75rem', sm: '0.85rem' },
+              fontFamily: 'Cambria, serif',
+            }}
           >
             Last Updated:{' '}
             <strong>

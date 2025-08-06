@@ -1,12 +1,12 @@
 import { Box, Fab } from '@mui/material';
-import banner from '../images/bg5.png';
+import banner from '../images/bg1.jpg';
 import Slide from '@mui/material/Slide';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import Fade from '@mui/material/Fade';
 import Marquee from '../Component/Marquee';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import SelectActionCard from '../Component/SelectActionCard';
-import SelectActionCard2 from '../Component/SelectActionCard2'
+//import SelectActionCard2 from '../Component/SelectActionCard2'
 
 function ScrollTop(props) {
   const { children, window } = props;
@@ -48,20 +48,6 @@ export default function Home(props) {
       <Box sx={{ height: 0 }} id="back-to-top-anchor" />
 
       {/* Banner Section */}
-      {/* <Slide in={true} direction="down" timeout={600}>
-        <Box
-          sx={{
-            height: '350px',
-            backgroundImage: `url(${banner})`,
-            backgroundSize: '100% 100%',
-            backgroundPosition: 'center',
-            position: 'relative',
-            pt: 10,
-          }}
-        >
-        </Box>
-      </Slide> */}
-      {/* Banner Section */}
       <Slide in={true} direction="down" timeout={600}>
         <Box sx={{ textAlign: 'center', pt: 0 }}>
           <img
@@ -69,7 +55,7 @@ export default function Home(props) {
             alt="Banner"
             style={{
               width: '100%',
-              //height: '350px',
+              //height: 'auto',
               objectFit: 'cover',
             }}
           />

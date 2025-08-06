@@ -63,21 +63,20 @@ export default function SelectActionCard() {
           mb: 4,
         }}
       >
-        <FormatListBulletedSharpIcon sx={{ fontSize: '3rem', color: 'grey', mr: 1 }} />
+        {/* <FormatListBulletedSharpIcon sx={{ fontSize: '3rem', color: 'grey', mr: 1 }} /> */}
         <Typography
           variant="h4"
           sx={{
             // fontFamily: 'Poppins, sans-serif',
             fontFamily: 'Cambria, serif' ,
-            fontWeight: 'bold',
-            textDecoration: 'underline',
+            //fontWeight: 'bold',
+            //textDecoration: 'underline',
             color: '#0c4a88ff',
           }}
         >
           Services
         </Typography>
       </Box>
-
       <hr />
       <br />
 
@@ -128,6 +127,7 @@ export default function SelectActionCard() {
                       variant="h6"
                       component="div"
                       sx={{
+                        fontFamily:'Cambria, serif',
                         fontWeight: 600,
                         mb: 1,
                         color: '#1976d2',
