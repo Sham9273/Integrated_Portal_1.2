@@ -25,7 +25,7 @@ import CDACWebsiteicon from '../images/icons/11.png';
 import IntranetPortalicon from '../images/icons/12.png';
 
 const cards = [
-  { id: 1, title: 'Webmail', icon: webmailicon },
+  { id: 1, title: 'Webmail', icon: webmailicon, url: 'https://webmail4.cdac.in/appsuite/sample297.php' },
   { id: 2, title: 'IHRMS', icon: ihrmsicon },
   { id: 3, title: 'eMulazim', icon: eMulazimicon },
   { id: 4, title: 'APAR', icon: APARicon },
@@ -65,12 +65,18 @@ export default function SelectActionCard() {
       >
         {/* <FormatListBulletedSharpIcon sx={{ fontSize: '3rem', color: 'grey', mr: 1 }} /> */}
         <Typography
-          variant="h4"
+          variant="h3"
           sx={{
             // fontFamily: 'Poppins, sans-serif',
+<<<<<<< HEAD
+            fontFamily: 'Cambria, serif',
+            fontWeight: 'bold',
+            textDecoration: 'underline',
+=======
             fontFamily: 'Cambria, serif' ,
             //fontWeight: 'bold',
             //textDecoration: 'underline',
+>>>>>>> 19fc2714709d1f466355da7d7fdd74a4911e6baa
             color: '#0c4a88ff',
           }}
         >
@@ -113,7 +119,17 @@ export default function SelectActionCard() {
                 backgroundColor: 'rgba(255, 255, 255, 0.9)',
               }}
             >
-              <CardActionArea onClick={() => setSelectedCard(index)} sx={{ height: '100%' }}>
+              <CardActionArea  sx={{ height: '100%' }}
+
+                onClick={() => {
+                  setSelectedCard(index);
+                  if (card.url) {
+                    window.open(card.url, '_blank'); // opens in new tab
+                    // window.location.href = card.url; // use this if you want same tab
+                  }
+                }}
+
+              >
                 <CardContent sx={{ height: '100%' }}>
                   <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                     <Box sx={{ mb: 1 }}>
