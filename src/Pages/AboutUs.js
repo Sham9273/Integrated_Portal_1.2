@@ -1,7 +1,11 @@
 import { Box, Typography, Container, Grid, Paper } from '@mui/material';
 import { motion } from 'framer-motion';
+import { useEffect } from 'react';
 
 export default function AboutUs() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Container maxWidth="lg" sx={{ mt: 12, mb: 6 }}>
       <motion.div
@@ -27,7 +31,7 @@ export default function AboutUs() {
                 {/* <Typography variant="h6" gutterBottom sx={{ color: '#1976d2' }}>
                   Who We Are
                 </Typography> */}
-                <Typography variant="body1" sx={{ color: '#444' }}>
+                <Typography variant="body1" sx={{ color: '#444', textAlign: 'justify' }}>
                   The Unified Dashboard has been developed by the Centre for Development of Advanced Computing (C-DAC), an autonomous scientific society under the Ministry of Electronics and Information Technology, Government of India. This platform is designed to offer a consolidated view of various services offered by C-DAC through a single, user-friendly interface.
                   The integration of the Unified Dashboard with e-Pramaan Single Sign-On (SSO) has been completed. The system will be launched soon after incorporating all SITS (Services, Infrastructure, Tools & Solutions) services into the SSO framework. This initiative aims to streamline access, improve efficiency, and enhance user experience across C-DAC’s digital ecosystem. </Typography>
               </Paper>
@@ -43,7 +47,7 @@ export default function AboutUs() {
                 <Typography variant="h6" gutterBottom sx={{ color: '#43a047' }}>
                   Our Mission
                 </Typography>
-                <Typography variant="body1" sx={{ color: '#444' }}>
+                <Typography variant="body1" sx={{ color: '#444', textAlign: 'justify' }}>
                   To provide a unified, secure, and seamless access point to C-DAC's diverse range of services through a centralized dashboard, empowering users with efficient, integrated digital solutions. We are committed to supporting transparency, accessibility, and technological excellence in public service delivery.
                 </Typography>
               </Paper>

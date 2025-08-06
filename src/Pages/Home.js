@@ -55,13 +55,12 @@ export default function Home(props) {
             alt="Banner"
             style={{
               width: '100%',
-              //height: 'auto',
-              objectFit: 'cover',
+              //height: '350px',
+              objectFit: 'fill',
             }}
           />
         </Box>
       </Slide>
-
 
       {/* Marquee Section */}
       <Marquee />

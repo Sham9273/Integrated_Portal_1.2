@@ -5,7 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import CardActionArea from '@mui/material/CardActionArea';
 import { motion } from 'framer-motion';
-import FormatListBulletedSharpIcon from '@mui/icons-material/FormatListBulletedSharp';
+//import FormatListBulletedSharpIcon from '@mui/icons-material/FormatListBulletedSharp';
 
 import PageHeading from './PageHeading';
 import bg2 from '../images/961.jpg';
@@ -65,18 +65,10 @@ export default function SelectActionCard() {
       >
         {/* <FormatListBulletedSharpIcon sx={{ fontSize: '3rem', color: 'grey', mr: 1 }} /> */}
         <Typography
-          variant="h3"
+          variant="h4"
           sx={{
             // fontFamily: 'Poppins, sans-serif',
-<<<<<<< HEAD
             fontFamily: 'Cambria, serif',
-            fontWeight: 'bold',
-            textDecoration: 'underline',
-=======
-            fontFamily: 'Cambria, serif' ,
-            //fontWeight: 'bold',
-            //textDecoration: 'underline',
->>>>>>> 19fc2714709d1f466355da7d7fdd74a4911e6baa
             color: '#0c4a88ff',
           }}
         >

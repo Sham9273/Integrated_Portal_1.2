@@ -10,7 +10,6 @@ import {
 } from '@mui/material';
 import { useState, useEffect } from 'react';
 import RefreshIcon from '@mui/icons-material/Refresh';
-//import banner from '../images/v1.jpg'; // Replace with your banner image
 
 const generateCaptcha = () => {
   const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
@@ -24,6 +23,9 @@ const Login = () => {
 
   useEffect(() => {
     setCaptcha(generateCaptcha());
+  }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
   }, []);
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
@@ -45,7 +47,7 @@ const Login = () => {
   return (
     <Box
       sx={{
-        minHeight: '100vh',
+        minHeight: '85vh',
         //backgroundImage: `url(${banner})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -56,9 +58,10 @@ const Login = () => {
       }}
     >
       <Paper
-        elevation={6}
+        elevation={10}
         sx={{
-          width: isMobile ? '100%' : 400,
+          width: isMobile ? '100%' : 300,
+         // height: '100px',
           p: 3,
           bgcolor: '#fff',
           borderRadius: 4,
@@ -67,7 +70,7 @@ const Login = () => {
         <Typography
           variant="h5"
           align="center"
-          sx={{ fontWeight: 'bold', mb: 2, color: '#333', textDecoration: 'underline' }}
+          sx={{fontWeight: 'bold', mb: 2, color: '#333', textDecoration: 'underline' }}
         >
           Login
         </Typography>
@@ -142,6 +145,10 @@ const Login = () => {
   );
 };
 export default Login;
+
+
+
+
 
 
 

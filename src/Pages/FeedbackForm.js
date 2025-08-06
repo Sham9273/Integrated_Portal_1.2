@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
 import {
   Box,
   Container,
@@ -11,6 +12,10 @@ import {
 import { motion } from 'framer-motion';
 
 export default function FeedbackForm() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   const [feedbackData, setFeedbackData] = useState({
     name: '',
     email: '',
@@ -41,7 +46,7 @@ export default function FeedbackForm() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <Paper elevation={4} sx={{ p: 4, borderRadius: 3 }}>
+        <Paper elevation={10} sx={{ p: 4, borderRadius: 3, width: 350, mx: 'auto' }}>
           <Typography variant="h5" gutterBottom sx={{ fontWeight: 'bold', textAlign: 'center' }}>
             Feedback Form
           </Typography>
@@ -53,6 +58,7 @@ export default function FeedbackForm() {
               fullWidth
               label="Your Name"
               name="name"
+              size='small'
               value={feedbackData.name}
               onChange={handleChange}
               sx={{ mb: 2 }}
@@ -63,6 +69,7 @@ export default function FeedbackForm() {
               label="Email Address"
               name="email"
               type="email"
+              size='small'
               value={feedbackData.email}
               onChange={handleChange}
               sx={{ mb: 2 }}
