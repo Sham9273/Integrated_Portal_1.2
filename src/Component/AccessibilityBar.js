@@ -8,24 +8,21 @@ import {
 } from '@mui/icons-material';
 import { motion } from 'framer-motion';
 
-const AccessibilityBar = ({  darkMode, setDarkMode }) => {
+const AccessibilityBar = ({ darkMode, setDarkMode }) => {
 
-const [fontSize, setFontSize] = useState(16); // default size
+  const [fontSize, setFontSize] = useState(16); // default size
 
-const increaseFont = () => {
-  const newSize = Math.min(22, fontSize + 2); // cap at 22px
-  setFontSize(newSize);
-  document.documentElement.style.fontSize = `${newSize}px`;
-};
+  const increaseFont = () => {
+    const newSize = Math.min(22, fontSize + 2); // cap at 22px
+    setFontSize(newSize);
+    document.documentElement.style.fontSize = `${newSize}px`;
+  };
 
-const decreaseFont = () => {
-   const newSize = Math.max(12, fontSize - 2); // don't go below 12px
-  setFontSize(newSize);
-  document.documentElement.style.fontSize = `${newSize}px`;
-};
-
-
-
+  const decreaseFont = () => {
+    const newSize = Math.max(12, fontSize - 2); // don't go below 12px
+    setFontSize(newSize);
+    document.documentElement.style.fontSize = `${newSize}px`;
+  };
 
   const [lineSpacing, setLineSpacing] = useState(false);
   const [highContrast, setHighContrast] = useState(false);
@@ -34,8 +31,15 @@ const decreaseFont = () => {
     document.body.style.lineHeight = lineSpacing ? '2' : 'normal';
   }, [lineSpacing]);
 
+  // useEffect(() => {
+  //   document.body.style.filter = highContrast ? 'contrast(150%)' : 'none';
+  // }, [highContrast]);
+
   useEffect(() => {
-    document.body.style.filter = highContrast ? 'contrast(150%)' : 'none';
+    const mainContent = document.getElementById('main-content');
+    if (mainContent) {
+      mainContent.style.filter = highContrast ? 'contrast(150%)' : 'none';
+    }
   }, [highContrast]);
 
   return (
