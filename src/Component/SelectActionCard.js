@@ -25,7 +25,7 @@ import CDACWebsiteicon from '../images/icons/11.png';
 import IntranetPortalicon from '../images/icons/12.png';
 
 const cards = [
-  { id: 1, title: 'Webmail', icon: webmailicon },
+  { id: 1, title: 'Webmail', icon: webmailicon, url: 'https://webmail4.cdac.in/appsuite/sample297.php' },
   { id: 2, title: 'IHRMS', icon: ihrmsicon },
   { id: 3, title: 'eMulazim', icon: eMulazimicon },
   { id: 4, title: 'APAR', icon: APARicon },
@@ -68,7 +68,7 @@ export default function SelectActionCard() {
           variant="h3"
           sx={{
             // fontFamily: 'Poppins, sans-serif',
-            fontFamily: 'Cambria, serif' ,
+            fontFamily: 'Cambria, serif',
             fontWeight: 'bold',
             textDecoration: 'underline',
             color: '#0c4a88ff',
@@ -114,7 +114,17 @@ export default function SelectActionCard() {
                 backgroundColor: 'rgba(255, 255, 255, 0.9)',
               }}
             >
-              <CardActionArea onClick={() => setSelectedCard(index)} sx={{ height: '100%' }}>
+              <CardActionArea  sx={{ height: '100%' }}
+
+                onClick={() => {
+                  setSelectedCard(index);
+                  if (card.url) {
+                    window.open(card.url, '_blank'); // opens in new tab
+                    // window.location.href = card.url; // use this if you want same tab
+                  }
+                }}
+
+              >
                 <CardContent sx={{ height: '100%' }}>
                   <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                     <Box sx={{ mb: 1 }}>

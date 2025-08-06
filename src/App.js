@@ -8,28 +8,32 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './Pages/Login';
 
 import ContactUs from './Pages/ContactUs'
-import LoginPage from './Component/Login';
+
+import AutoSubmitRedirect from './LoginWithEpramaan/AutoSubmitRedirect';
+import LoginPageWithEpramaan from './LoginWithEpramaan/LoginPageWithEpramaan';
 
 const App = () => {
   return (
     <>
-      <Navbar/>
+      <Navbar />
       {/* <Home /> */}
       {/* <SelectActionCard/> */}
-  
+
       <Routes>
         <Route path="/intportal" element={<Home />} />
         <Route path="/contact" element={<ContactUs />} />
-<<<<<<< HEAD
-         <Route path="/login" element={<LoginPage />} />
-=======
+
+        <Route path="/loginwithepramaan" element={<LoginPageWithEpramaan />} />
+
         <Route path="/login" element={<Login />} />
+        <Route path="/autosubmit" element={<AutoSubmitRedirect />} />
+
         {/* <Route path="/aboutus" element={<AboutUs/>}/> */}
->>>>>>> ec05d2ab43f59990d81bf82b9fade7d293411830
+
         {/* Add other routes as needed */}
       </Routes>
-          <Footer/>
-      <QuickLinkFooter/>
+      <Footer />
+      <QuickLinkFooter />
     </>
   );
 };
