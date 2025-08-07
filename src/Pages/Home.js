@@ -6,7 +6,7 @@ import Fade from '@mui/material/Fade';
 import Marquee from '../Component/Marquee';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import SelectActionCard from '../Component/SelectActionCard';
-//import SelectActionCard2 from '../Component/SelectActionCard2'
+import SelectActionCard2 from '../Component/SelectActionCard2'
 
 function ScrollTop(props) {
   const { children, window } = props;
@@ -64,8 +64,8 @@ export default function Home(props) {
 
       {/* Marquee Section */}
       <Marquee />
-      <SelectActionCard />
-      {/* <SelectActionCard2/> */}
+      {/* <SelectActionCard /> */}
+      <SelectActionCard2/>
 
       {/* Scroll to top button (always visible on scroll) */}
       <ScrollTop {...props}>
