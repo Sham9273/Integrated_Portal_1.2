@@ -1,6 +1,8 @@
-import React from 'react';
-
+import { useEffect } from "react";
 const Help = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div style={{ maxWidth: 700, margin: '40px auto', padding: 24, background: '#f9f9f9', borderRadius: 8 }}>
       <h2 style={{ color: '#1976d2', fontFamily: 'Cambria, serif' }}>Help</h2>
@@ -26,7 +28,7 @@ const Help = () => {
           To view the information properly, your browser needs to have the required plug-ins or software. For example, the Adobe Flash software is required to view Flash files. 
           In case your system does not have this software, you can download it from the Internet for free. The table below lists the required plug-ins needed to view the information in various file formats.
         </p>
-        <table style={{ width: '100%', borderCollapse: 'collapse', marginTop: 16 }}>
+        {/* <table style={{ width: '100%', borderCollapse: 'collapse', marginTop: 16 }}>
           <thead>
             <tr style={{ background: '#e3f2fd' }}>
               <th style={{ border: '1px solid #ccc', padding: 8 }}>File Format</th>
@@ -57,7 +59,7 @@ const Help = () => {
               </td>
             </tr>
           </tbody>
-        </table>
+        </table> */}
       </section>
     </div>
   );

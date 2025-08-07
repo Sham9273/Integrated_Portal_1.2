@@ -21,53 +21,49 @@ const QuickLinksFooter = () => {
           flexWrap="wrap"
           sx={{ mb: 2, fontFamily: 'Cambria, serif' }}
         >
-          {/* {[
-            'About Us',
-            'Help',
-            'Sitemap',
-            'Website Policies',
-            'Feedback',
-            'Contact Us',
-          ].map((text, idx) => (
-            <Link
-              key={idx}
-              href="#"
-              underline="none"
-              sx={{
-                color: '#f1f1f1',
-                fontSize: { xs: '0.9rem', sm: '1rem' },
-                '&:hover': {
-                  color: '#00e5ff',
-                },
-              }}
-            >
-              {text}
-            </Link>
-          ))} */}
+
           {[
-            { text: 'About Us', to: '/aboutus' },
-            { text: 'Help', to: '/help' },
-            { text: 'Sitemap', to: '#' },
-            { text: 'Website Policies', to: '/websitepolicy' },
-            { text: 'Feedback', to: '/feedback' },
-            { text: 'Contact Us', to: '/contact' },
-          ].map(({ text, to }, idx) => (
-            <MuiLink
-              key={idx}
-              component={to !== '#' ? RouterLink : 'a'}
-              to={to !== '#' ? to : undefined}
-              href={to === '#' ? '#' : undefined}
-              underline="none"
-              sx={{
-                color: '#f1f1f1',
-                fontSize: { xs: '0.9rem', sm: '1rem' },
-                '&:hover': {
-                  color: '#00e5ff',
-                },
-              }}
-            >
-              {text}
-            </MuiLink>
+            { text: 'About Us', href: 'https://www.cdac.in/index.aspx?id=about', external: true },
+            { text: 'Help', to: '/intportal/help' },
+            { text: 'Sitemap', to: '/intportal/sitemap' },
+            { text: 'Website Policies', to: '/intportal/websitepolicy' },
+            // { text: 'Feedback', to: '/feedback' },
+            { text: 'Contact Us', to: '/intportal/contact' },
+          ].map(({ text, to, href, external }, idx) => (
+            external ? (
+              <MuiLink
+                key={idx}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                underline="none"
+                sx={{
+                  color: '#f1f1f1',
+                  fontSize: { xs: '0.9rem', sm: '1rem' },
+                  '&:hover': {
+                    color: '#00e5ff',
+                  },
+                }}
+              >
+                {text}
+              </MuiLink>
+            ) : (
+              <MuiLink
+                key={idx}
+                component={RouterLink}
+                to={to}
+                underline="none"
+                sx={{
+                  color: '#f1f1f1',
+                  fontSize: { xs: '0.9rem', sm: '1rem' },
+                  '&:hover': {
+                    color: '#00e5ff',
+                  },
+                }}
+              >
+                {text}
+              </MuiLink>
+            )
           ))}
         </Stack>
       </Slide>

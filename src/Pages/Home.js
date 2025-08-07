@@ -1,5 +1,5 @@
 import { Box, Fab } from '@mui/material';
-import banner from '../images/bg1.jpg';
+import banner from '../images/bg3.jpg';
 import Slide from '@mui/material/Slide';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import Fade from '@mui/material/Fade';
@@ -55,13 +55,12 @@ export default function Home(props) {
             alt="Banner"
             style={{
               width: '100%',
-              //height: 'auto',
-              objectFit: 'cover',
+              //height: '350px',
+              objectFit: 'fill',
             }}
           />
         </Box>
       </Slide>
-
 
       {/* Marquee Section */}
       <Marquee />

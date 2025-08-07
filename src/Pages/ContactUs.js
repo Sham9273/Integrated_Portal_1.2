@@ -1,160 +1,399 @@
-import React, { useState } from 'react';
+import {useEffect } from 'react';
 import {
   Container,
   Grid,
   Paper,
-  TextField,
+ // TextField,
   Typography,
-  Button,
+ // Button,
   Box
 } from '@mui/material';
 import { motion } from 'framer-motion';
 import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import PhoneIcon from '@mui/icons-material/Phone';
+//import React, { useState, useEffect } from 'react';
 
 function ContactUs() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
+  // const [formData, setFormData] = useState({
+  //   name: '',
+  //   email: '',
+  //   message: '',
+  // });
+useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setFormData((prev) => ({ ...prev, [name]: value }));
+  // };
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Submitted:', formData);
-    alert('Message sent! (We can replace this with actual logic)');
-    setFormData({ name: '', email: '', message: '' });
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log('Submitted:', formData);
+  //   alert('Message sent! (We can replace this with actual logic)');
+  //   setFormData({ name: '', email: '', message: '' });
+  // };
 
   return (
-    React.createElement(Container, { maxWidth: "md", sx: { mt: 12, mb: 8 } },
-      React.createElement(motion.div, {
-        initial: { opacity: 0, y: 30 },
-        animate: { opacity: 1, y: 0 },
-        transition: { duration: 0.8 }
-      },
-        React.createElement(Typography, {
-          variant: "h4",
-          gutterBottom: true,
-          sx: {
+    <Container maxWidth="md" sx={{ mt: 12, mb: 8 }}>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <Typography
+          variant="h4"
+          gutterBottom
+          sx={{
             fontWeight: 'bold',
             textAlign: 'center',
             background: 'linear-gradient(to right, #1976d2, #42a5f5)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
-          }
-        }, "📬 Get in Touch"),
+          }}
+        >
+          📬 Get in Touch
+        </Typography>
 
-        React.createElement(Typography, {
-          variant: "subtitle1",
-          sx: { textAlign: 'center', mb: 5, color: '#555' }
-        }, "We welcome your feedback, queries, and suggestions. Please fill out the contact form provided or reach out to us directly using the details below. Our team will respond to you at the earliest."),
+        <Typography
+          variant="subtitle1"
+          sx={{ textAlign: 'center', mb: 5, color: '#555' }}
+        >
+          We welcome your feedback, queries, and suggestions. Please fill out the contact form provided or reach out to us directly using the details below. Our team will respond to you at the earliest.
+        </Typography>
 
-        React.createElement(Grid, { container: true, spacing: 4 },
-          // Form Section
-          React.createElement(Grid, { item: true, xs: 12, md: 6 },
-            React.createElement(Paper, { elevation: 4, sx: { p: 4, borderRadius: 3 } },
-              React.createElement("form", { onSubmit: handleSubmit },
-                React.createElement(TextField, {
-                  fullWidth: true,
-                  label: "Your Name",
-                  variant: "outlined",
-                  name: "name",
-                  value: formData.name,
-                  onChange: handleChange,
-                  sx: { mb: 3 },
-                  required: true
-                }),
-                React.createElement(TextField, {
-                  fullWidth: true,
-                  label: "Email Address",
-                  variant: "outlined",
-                  name: "email",
-                  type: "email",
-                  value: formData.email,
-                  onChange: handleChange,
-                  sx: { mb: 3 },
-                  required: true
-                }),
-                React.createElement(TextField, {
-                  fullWidth: true,
-                  label: "Your Message",
-                  variant: "outlined",
-                  name: "message",
-                  multiline: true,
-                  rows: 4,
-                  value: formData.message,
-                  onChange: handleChange,
-                  sx: { mb: 3 },
-                  required: true
-                }),
-                React.createElement(Button, {
-                  type: "submit",
-                  variant: "contained",
-                  fullWidth: true,
-                  sx: {
-                    backgroundColor: '#1976d2',
-                    textTransform: 'none',
-                    fontWeight: 'bold',
-                    ':hover': { backgroundColor: '#115293' }
-                  }
-                }, "🚀 Send Message")
-              )
-            )
-          ),
+        <Box
+          sx={{
+            //minHeight: '70vh',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <Grid container spacing={0} justifyContent="center" alignItems="center">
+            {/* Form Section */}
+            {/* <Grid item xs={12} md={6}>
+              <Paper elevation={10} sx={{ p: 4, borderRadius: 3, width: 350, mx: 'auto' }}>
+                <form onSubmit={handleSubmit}>
+                  <TextField
+                    fullWidth
+                    label="Your Name"
+                    variant="outlined"
+                    name="name"
+                    size="small"
+                    value={formData.name}
+                    onChange={handleChange}
+                    sx={{ mb: 3 }}
+                    required
+                  />
+                  <TextField
+                    fullWidth
+                    label="Email Address"
+                    variant="outlined"
+                    name="email"
+                    type="email"
+                    size="small"
+                    value={formData.email}
+                    onChange={handleChange}
+                    sx={{ mb: 3 }}
+                    required
+                  />
+                  <TextField
+                    fullWidth
+                    label="Your Message"
+                    variant="outlined"
+                    name="message"
+                    multiline
+                    rows={4}
+                    value={formData.message}
+                    onChange={handleChange}
+                    sx={{ mb: 3 }}
+                    required
+                  />
+                  <Button
+                    type="submit"
+                    variant="contained"
+                    fullWidth
+                    sx={{
+                      backgroundColor: '#1976d2',
+                      textTransform: 'none',
+                      fontWeight: 'bold',
+                      ':hover': { backgroundColor: '#115293' }
+                    }}
+                  >
+                    🚀 Send Message
+                  </Button>
+                </form>
+              </Paper>
+            </Grid> */}
+            {/* Contact Info Section */}
+            <Grid item xs={12} md={6}>
+              <Paper
+                elevation={10}
+                sx={{
+                  p: 4,
+                  borderRadius: 3,
+                  height: '100%',
+                  backgroundColor: '#f5f5f5',
+                }}
+              >
+                <Typography
+                  variant="h6"
+                  gutterBottom
+                  sx={{ color: '#1976d2', fontWeight: 'bold' }}
+                >
+                  📍 Reach Us At
+                </Typography>
 
-          // Contact Info Section
-          React.createElement(Grid, { item: true, xs: 12, md: 6 },
-            React.createElement(Paper, {
-              elevation: 4,
-              sx: {
-                p: 4,
-                borderRadius: 3,
-                height: '100%',
-                backgroundColor: '#f5f5f5',
-              }
-            },
-              React.createElement(Typography, {
-                variant: "h6",
-                gutterBottom: true,
-                sx: { color: '#1976d2', fontWeight: 'bold' }
-              }, "📍 Reach Us At"),
+                <Box display="flex" alignItems="start" mb={2}>
+                  <LocationOnIcon sx={{ mr: 1, color: '#43a047' }} />
+                  <Typography variant="body1" sx={{ color: '#444' }}>
+                    Centre for Development of Advanced Computing,
+                    Gulmohar Cross Road No. 9, Juhu, Mumbai - 400 049.
+                  </Typography>
+                </Box>
 
-              React.createElement(Box, { display: "flex", alignItems: "start", mb: 2 },
-                React.createElement(LocationOnIcon, { sx: { mr: 1, color: '#43a047' } }),
-                React.createElement(Typography, { variant: "body1", sx: { color: '#444' } },
-                  "Centre for Development of Advanced Computing,\nGulmohar Cross Road No. 9, Juhu, Mumbai - 400 049."
-                )
-              ),
+                <Box display="flex" alignItems="center" mb={2}>
+                  <EmailIcon sx={{ mr: 1, color: '#ff7043' }} />
+                  <Typography variant="body1" sx={{ color: '#444' }}>
+                    contact@cdacproject.org
+                  </Typography>
+                </Box>
 
-              React.createElement(Box, { display: "flex", alignItems: "center", mb: 2 },
-                React.createElement(EmailIcon, { sx: { mr: 1, color: '#ff7043' } }),
-                React.createElement(Typography, { variant: "body1", sx: { color: '#444' } },
-                  "contact@cdacproject.org"
-                )
-              ),
-
-              React.createElement(Box, { display: "flex", alignItems: "center" },
-                React.createElement(PhoneIcon, { sx: { mr: 1, color: '#1976d2' } }),
-                React.createElement(Typography, { variant: "body1", sx: { color: '#444' } },
-                  "+91-**********"
-                )
-              )
-            )
-          )
-        )
-      )
-    )
+                <Box display="flex" alignItems="center">
+                  <PhoneIcon sx={{ mr: 1, color: '#1976d2' }} />
+                  <Typography variant="body1" sx={{ color: '#444' }}>
+                    +91-**********
+                  </Typography>
+                </Box>
+              </Paper>
+            </Grid>
+          </Grid>
+        </Box>
+      </motion.div>
+    </Container>
   );
 }
-
 export default ContactUs;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState } from 'react';
+// import {
+//   Container,
+//   Grid,
+//   Paper,
+//   TextField,
+//   Typography,
+//   Button,
+//   Box
+// } from '@mui/material';
+// import { motion } from 'framer-motion';
+// import EmailIcon from '@mui/icons-material/Email';
+// import LocationOnIcon from '@mui/icons-material/LocationOn';
+// import PhoneIcon from '@mui/icons-material/Phone';
+
+// function ContactUs() {
+//   const [formData, setFormData] = useState({
+//     name: '',
+//     email: '',
+//     message: '',
+//   });
+
+//   const handleChange = (e) => {
+//     const { name, value } = e.target;
+//     setFormData((prev) => ({ ...prev, [name]: value }));
+//   };
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     console.log('Submitted:', formData);
+//     alert('Message sent! (We can replace this with actual logic)');
+//     setFormData({ name: '', email: '', message: '' });
+//   };
+
+//   return (
+//     React.createElement(Container, { maxWidth: "md", sx: { mt: 12, mb: 8 } },
+//       React.createElement(motion.div, {
+//         initial: { opacity: 0, y: 30 },
+//         animate: { opacity: 1, y: 0 },
+//         transition: { duration: 0.8 }
+//       },
+//         React.createElement(Typography, {
+//           variant: "h4",
+//           gutterBottom: true,
+//           sx: {
+//             fontWeight: 'bold',
+//             textAlign: 'center',
+//             background: 'linear-gradient(to right, #1976d2, #42a5f5)',
+//             WebkitBackgroundClip: 'text',
+//             WebkitTextFillColor: 'transparent',
+//           }
+//         }, "📬 Get in Touch"),
+
+//         React.createElement(Typography, {
+//           variant: "subtitle1",
+//           sx: { textAlign: 'center', mb: 5, color: '#555' }
+//         }, "We welcome your feedback, queries, and suggestions. Please fill out the contact form provided or reach out to us directly using the details below. Our team will respond to you at the earliest."),
+
+        
+//         React.createElement(Grid, { container: true, spacing: 4 },
+//           // Form Section
+//           React.createElement(Grid, { item: true, xs: 12, md: 6 },
+//             React.createElement(Paper, { elevation: 10, sx: { p: 4, borderRadius: 3, width:350, mx:'auto', alignItems: 'center' } },
+//               React.createElement("form", { onSubmit: handleSubmit },
+//                 React.createElement(TextField, {
+//                   fullWidth: true,
+//                   label: "Your Name",
+//                   variant: "outlined",
+//                   name: "name",
+//                   size: "small",
+//                   value: formData.name,
+//                   onChange: handleChange,
+//                   sx: { mb: 3 },
+//                   required: true
+//                 }),
+//                 React.createElement(TextField, {
+//                   fullWidth: true,
+//                   label: "Email Address",
+//                   variant: "outlined",
+//                   name: "email",
+//                   type: "email",
+//                   size: "small",
+//                   value: formData.email,
+//                   onChange: handleChange,
+//                   sx: { mb: 3 },
+//                   required: true
+//                 }),
+//                 React.createElement(TextField, {
+//                   fullWidth: true,
+//                   label: "Your Message",
+//                   variant: "outlined",
+//                   name: "message",
+//                   multiline: true,
+//                   rows: 4,
+//                   value: formData.message,
+//                   onChange: handleChange,
+//                   sx: { mb: 3 },
+//                   required: true
+//                 }),
+//                 React.createElement(Button, {
+//                   type: "submit",
+//                   variant: "contained",
+//                   fullWidth: true,
+//                   sx: {
+//                     backgroundColor: '#1976d2',
+//                     textTransform: 'none',
+//                     fontWeight: 'bold',
+//                     ':hover': { backgroundColor: '#115293' }
+//                   }
+//                 }, "🚀 Send Message")
+//               )
+//             )
+//           ),
+
+//           // Contact Info Section
+//           React.createElement(Grid, { item: true, xs: 12, md: 6 },
+//             React.createElement(Paper, {
+//               elevation: 4,
+//               sx: {
+//                 p: 4,
+//                 borderRadius: 3,
+//                 height: '100%',
+//                 backgroundColor: '#f5f5f5',
+//               }
+//             },
+//               React.createElement(Typography, {
+//                 variant: "h6",
+//                 gutterBottom: true,
+//                 sx: { color: '#1976d2', fontWeight: 'bold' }
+//               }, "📍 Reach Us At"),
+
+//               React.createElement(Box, { display: "flex", alignItems: "start", mb: 2 },
+//                 React.createElement(LocationOnIcon, { sx: { mr: 1, color: '#43a047' } }),
+//                 React.createElement(Typography, { variant: "body1", sx: { color: '#444' } },
+//                   "Centre for Development of Advanced Computing,\nGulmohar Cross Road No. 9, Juhu, Mumbai - 400 049."
+//                 )
+//               ),
+
+//               React.createElement(Box, { display: "flex", alignItems: "center", mb: 2 },
+//                 React.createElement(EmailIcon, { sx: { mr: 1, color: '#ff7043' } }),
+//                 React.createElement(Typography, { variant: "body1", sx: { color: '#444' } },
+//                   "contact@cdacproject.org"
+//                 )
+//               ),
+
+//               React.createElement(Box, { display: "flex", alignItems: "center" },
+//                 React.createElement(PhoneIcon, { sx: { mr: 1, color: '#1976d2' } }),
+//                 React.createElement(Typography, { variant: "body1", sx: { color: '#444' } },
+//                   "+91-**********"
+//                 )
+//               )
+//             )
+//           )
+//         )
+//       )
+//     )
+//   );
+// }
+
+// export default ContactUs;
 
 
 

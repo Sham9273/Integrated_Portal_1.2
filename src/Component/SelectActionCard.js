@@ -5,10 +5,10 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import CardActionArea from '@mui/material/CardActionArea';
 import { motion } from 'framer-motion';
-import FormatListBulletedSharpIcon from '@mui/icons-material/FormatListBulletedSharp';
+//import FormatListBulletedSharpIcon from '@mui/icons-material/FormatListBulletedSharp';
 
 import PageHeading from './PageHeading';
-import bg2 from '../images/961.jpg';
+import bg2 from '../images/b.jpg';
 
 // Icon Images
 import webmailicon from '../images/icons/1.png';
@@ -71,9 +71,10 @@ export default function SelectActionCard() {
       >
         {/* <FormatListBulletedSharpIcon sx={{ fontSize: '3rem', color: 'grey', mr: 1 }} /> */}
         <Typography
-          variant="h3"
+          variant="h4"
           sx={{
             // fontFamily: 'Poppins, sans-serif',
+<<<<<<< HEAD
 
             fontFamily: 'Cambria, serif',
             fontWeight: 'bold',
@@ -83,6 +84,9 @@ export default function SelectActionCard() {
             //fontWeight: 'bold',
             //textDecoration: 'underline',
 
+=======
+            fontFamily: 'Cambria, serif',
+>>>>>>> 92581cf5d448af2947c7ca1eced250e1462b2e16
             color: '#0c4a88ff',
           }}
         >
@@ -175,7 +179,6 @@ export default function SelectActionCard() {
           </motion.div>
         ))}
       </Box>
-
       <br />
       <br />
     </Box>

@@ -4,21 +4,23 @@ import Footer from './Component/Footer';
 import QuickLinkFooter from './Component/QuickLinkFooter';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './Pages/Login';
-import AboutUs from './Pages/AboutUs';
 import WebsitePolicy from './Pages/WebsitePolicy';
-import FeedbackForm from './Pages/FeedbackForm';
 import Help from './Pages/Help';
-
-
+import SiteMap from './Pages/SiteMap';
 import ContactUs from './Pages/ContactUs'
+
+// import AboutUs from './Pages/AboutUs';
+// import FeedbackForm from './Pages/FeedbackForm';
 
 import AutoSubmitRedirect from './LoginWithEpramaan/AutoSubmitRedirect';
 import LoginPageWithEpramaan from './LoginWithEpramaan/LoginPageWithEpramaan';
 
 const App = () => {
+  <Router></Router>
   return (
     <>
       <Navbar />
+<<<<<<< HEAD
       {/* <Home /> */}
       {/* <SelectActionCard/> */}
 
@@ -42,10 +44,13 @@ const App = () => {
       </Routes>
 
  
+=======
+>>>>>>> 92581cf5d448af2947c7ca1eced250e1462b2e16
 
       <div id="main-content">
         <Routes>
           <Route path="/intportal" element={<Home />} />
+<<<<<<< HEAD
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/login" element={<Login />} />
           <Route path="/aboutus" element={<AboutUs/>}/>
@@ -53,12 +58,33 @@ const App = () => {
           <Route path="/feedback" element={<FeedbackForm />} />
           <Route path="/help" element={<Help />} />
               <Route path="/loginwithepramaan" element={<LoginPageWithEpramaan />} />
+=======
+          <Route path="/intportal/contact" element={<ContactUs />} />
+          <Route path="/intportal/login" element={<Login />} />
+          <Route path="/intportal/websitepolicy" element={<WebsitePolicy />} />
+          <Route path="/intportal/help" element={<Help />} />
+          <Route path="/intportal/sitemap" element={<SiteMap />} />
+          <Route path="/intportal/loginwithepramaan" element={<LoginPageWithEpramaan />} />
+          <Route path="/intportal/login" element={<Login />} />
+          <Route path="/intportal/autosubmit" element={<AutoSubmitRedirect />} />
+
+>>>>>>> 92581cf5d448af2947c7ca1eced250e1462b2e16
           {/* Add other routes as needed */}
+
+          {/* <Route path="/aboutus" element={<AboutUs />} /> */}
+          {/* <Route path="/feedback" element={<FeedbackForm />} /> */}
+
         </Routes>
       </div>
+<<<<<<< HEAD
       
           <Footer/>
       <QuickLinkFooter/>
+=======
+
+      <Footer />
+      <QuickLinkFooter />
+>>>>>>> 92581cf5d448af2947c7ca1eced250e1462b2e16
 
     </>
   );
