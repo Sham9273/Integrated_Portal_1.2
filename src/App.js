@@ -20,18 +20,18 @@ const App = () => {
   return (
     <>
       <Navbar />
-      
+
       <div id="main-content">
         <Routes>
-          <Route path="/intportal" element={<Home />} />
-          <Route path="/contact" element={<ContactUs />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/websitepolicy" element={<WebsitePolicy />} />
-          <Route path="/help" element={<Help />} />
-          <Route path="/sitemap" element={<SiteMap />} />
-          <Route path="/loginwithepramaan" element={<LoginPageWithEpramaan />} />
-          <Route path="/login" element={<Login />} />
-           <Route path="/autosubmit" element={<AutoSubmitRedirect />} />
+          <Route path="/intportal/home" element={<Home />} />
+          <Route path="/intportal/contact" element={<ContactUs />} />
+          <Route path="/intportal/login" element={<Login />} />
+          <Route path="/intportal/websitepolicy" element={<WebsitePolicy />} />
+          <Route path="/intportal/help" element={<Help />} />
+          <Route path="/intportal/sitemap" element={<SiteMap />} />
+          <Route path="/intportal/loginwithepramaan" element={<LoginPageWithEpramaan />} />
+          <Route path="/intportal/login" element={<Login />} />
+          <Route path="/intportal/autosubmit" element={<AutoSubmitRedirect />} />
 
           {/* Add other routes as needed */}
 
