@@ -23,6 +23,8 @@ import CAKESicon from '../images/icons/9.png';
 import CorporateLearningDevelopmentPlatformicon from '../images/icons/10.png';
 import CDACWebsiteicon from '../images/icons/11.png';
 import IntranetPortalicon from '../images/icons/12.png';
+import { Button } from '@mui/material';
+import Logout from '../LoginWithEpramaan/Logout';
 
 const cards = [
   { id: 1, title: 'Webmail', icon: webmailicon, url: 'https://webmail4.cdac.in/appsuite/sample297.php' },
@@ -41,6 +43,10 @@ const cards = [
 
 export default function SelectActionCard() {
   const [selectedCard, setSelectedCard] = React.useState(null);
+
+
+
+
 
   return (
     <Box
@@ -68,12 +74,27 @@ export default function SelectActionCard() {
           variant="h4"
           sx={{
             // fontFamily: 'Poppins, sans-serif',
+<<<<<<< HEAD
+
             fontFamily: 'Cambria, serif',
+            fontWeight: 'bold',
+            textDecoration: 'underline',
+
+            fontFamily: 'Cambria, serif',
+            //fontWeight: 'bold',
+            //textDecoration: 'underline',
+
+=======
+            fontFamily: 'Cambria, serif',
+>>>>>>> 92581cf5d448af2947c7ca1eced250e1462b2e16
             color: '#0c4a88ff',
           }}
         >
           Services
+
+
         </Typography>
+       <Logout/>
       </Box>
       <hr />
       <br />
@@ -111,7 +132,7 @@ export default function SelectActionCard() {
                 backgroundColor: 'rgba(255, 255, 255, 0.9)',
               }}
             >
-              <CardActionArea  sx={{ height: '100%' }}
+              <CardActionArea sx={{ height: '100%' }}
 
                 onClick={() => {
                   setSelectedCard(index);
@@ -135,7 +156,7 @@ export default function SelectActionCard() {
                       variant="h6"
                       component="div"
                       sx={{
-                        fontFamily:'Cambria, serif',
+                        fontFamily: 'Cambria, serif',
                         fontWeight: 600,
                         mb: 1,
                         color: '#1976d2',
