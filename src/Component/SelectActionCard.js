@@ -74,7 +74,7 @@ export default function SelectActionCard() {
           variant="h4"
           sx={{
             // fontFamily: 'Poppins, sans-serif',
-<<<<<<< HEAD
+
 
             fontFamily: 'Cambria, serif',
             fontWeight: 'bold',
@@ -84,9 +84,9 @@ export default function SelectActionCard() {
             //fontWeight: 'bold',
             //textDecoration: 'underline',
 
-=======
+
             fontFamily: 'Cambria, serif',
->>>>>>> 92581cf5d448af2947c7ca1eced250e1462b2e16
+
             color: '#0c4a88ff',
           }}
         >
