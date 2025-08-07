@@ -24,11 +24,11 @@ const QuickLinksFooter = () => {
 
           {[
             { text: 'About Us', href: 'https://www.cdac.in/index.aspx?id=about', external: true },
-            { text: 'Help', to: '/help' },
-            { text: 'Sitemap', to: '/sitemap' },
-            { text: 'Website Policies', to: '/websitepolicy' },
+            { text: 'Help', to: '/intportal/help' },
+            { text: 'Sitemap', to: '/intportal/sitemap' },
+            { text: 'Website Policies', to: '/intportal/websitepolicy' },
             // { text: 'Feedback', to: '/feedback' },
-            { text: 'Contact Us', to: '/contact' },
+            { text: 'Contact Us', to: '/intportal/contact' },
           ].map(({ text, to, href, external }, idx) => (
             external ? (
               <MuiLink

@@ -23,7 +23,7 @@ const App = () => {
 
       <div id="main-content">
         <Routes>
-          <Route path="/intportal/home" element={<Home />} />
+          <Route path="/intportal" element={<Home />} />
           <Route path="/intportal/contact" element={<ContactUs />} />
           <Route path="/intportal/login" element={<Login />} />
           <Route path="/intportal/websitepolicy" element={<WebsitePolicy />} />
@@ -37,6 +37,7 @@ const App = () => {
 
           {/* <Route path="/aboutus" element={<AboutUs />} /> */}
           {/* <Route path="/feedback" element={<FeedbackForm />} /> */}
+
         </Routes>
       </div>
 

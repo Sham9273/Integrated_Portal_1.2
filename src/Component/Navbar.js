@@ -38,16 +38,16 @@ export default function Navbar() {
         navigate('/intportal');
         break;
       case 'contact':
-        navigate('/contact');
+        navigate('/intportal/contact');
         break;
       case 'help':
-        navigate('/help');
+        navigate('/intportal/help');
         break;
       case 'login':
-        navigate('/login');
+        navigate('/intportal/login');
         break;
       case 'aboutus':
-        navigate('/aboutus');
+        navigate('/intportal/aboutus');
         break;
       default:
         break;
