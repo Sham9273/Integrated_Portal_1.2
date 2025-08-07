@@ -9,9 +9,9 @@ const siteMapLinks = [
     { label: "About Us", to: "/aboutus" },
     { label: "Contact Us", to: "/contact" },
     { label: "Help", to: "/help" },
-    { label: "Feedback", to: "/feedback" },
     { label: "Website Policy", to: "/websitepolicy" },
-    { label: "Login", to: "/login" },
+
+    // { label: "Feedback", to: "/feedback" },
     // Add more links as needed
 ];
 

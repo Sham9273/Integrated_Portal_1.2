@@ -24,6 +24,7 @@ import logo from '../images/cdaclogo2.png';
 import { useState } from 'react';
 import SearchComponent from './SearchComponent';
 import { useNavigate } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -124,14 +125,20 @@ export default function Navbar() {
               transition={{ duration: 1 }}
             >
               <Box
-                component="img"
-                src={logo}
-                alt="Logo"
-                sx={{
-                  height: { xs: 24, sm: 28 },
-                  alignSelf: 'center',
-                }}
-              />
+                component={RouterLink}
+                to="/intportal"
+                sx={{ display: 'inline-block', cursor: 'pointer' }}
+              >
+                <Box
+                  component="img"
+                  src={logo}
+                  alt="Logo"
+                  sx={{
+                    height: { xs: 24, sm: 28 },
+                    alignSelf: 'center',
+                  }}
+                />
+              </Box>
             </motion.div>
 
             {isMobile ? (

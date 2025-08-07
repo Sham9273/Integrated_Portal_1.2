@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import {useEffect } from 'react';
 import {
   Container,
   Grid,
   Paper,
-  TextField,
+ // TextField,
   Typography,
-  Button,
+ // Button,
   Box
 } from '@mui/material';
 import { motion } from 'framer-motion';
@@ -15,25 +15,25 @@ import PhoneIcon from '@mui/icons-material/Phone';
 //import React, { useState, useEffect } from 'react';
 
 function ContactUs() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
+  // const [formData, setFormData] = useState({
+  //   name: '',
+  //   email: '',
+  //   message: '',
+  // });
 useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setFormData((prev) => ({ ...prev, [name]: value }));
+  // };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Submitted:', formData);
-    alert('Message sent! (We can replace this with actual logic)');
-    setFormData({ name: '', email: '', message: '' });
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log('Submitted:', formData);
+  //   alert('Message sent! (We can replace this with actual logic)');
+  //   setFormData({ name: '', email: '', message: '' });
+  // };
 
   return (
     <Container maxWidth="md" sx={{ mt: 12, mb: 8 }}>
@@ -65,15 +65,15 @@ useEffect(() => {
 
         <Box
           sx={{
-            minHeight: '70vh',
+            //minHeight: '70vh',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
           }}
         >
-          <Grid container spacing={4} justifyContent="center" alignItems="center">
+          <Grid container spacing={0} justifyContent="center" alignItems="center">
             {/* Form Section */}
-            <Grid item xs={12} md={6}>
+            {/* <Grid item xs={12} md={6}>
               <Paper elevation={10} sx={{ p: 4, borderRadius: 3, width: 350, mx: 'auto' }}>
                 <form onSubmit={handleSubmit}>
                   <TextField
@@ -126,11 +126,11 @@ useEffect(() => {
                   </Button>
                 </form>
               </Paper>
-            </Grid>
+            </Grid> */}
             {/* Contact Info Section */}
             <Grid item xs={12} md={6}>
               <Paper
-                elevation={4}
+                elevation={10}
                 sx={{
                   p: 4,
                   borderRadius: 3,
@@ -175,8 +175,54 @@ useEffect(() => {
     </Container>
   );
 }
-
 export default ContactUs;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -158,7 +158,6 @@ export default function SelectActionCard() {
           </motion.div>
         ))}
       </Box>
-
       <br />
       <br />
     </Box>
