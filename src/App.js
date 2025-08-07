@@ -21,30 +21,27 @@ const App = () => {
       <Navbar />
       {/* <Home /> */}
       {/* <SelectActionCard/> */}
-<<<<<<< HEAD
+
 
       <Routes>
-=======
-  
+
       {/* <Routes>
->>>>>>> 19fc2714709d1f466355da7d7fdd74a4911e6baa
+
         <Route path="/intportal" element={<Home />} />
         <Route path="/contact" element={<ContactUs />} />
 
         <Route path="/loginwithepramaan" element={<LoginPageWithEpramaan />} />
 
         <Route path="/login" element={<Login />} />
-<<<<<<< HEAD
+
         <Route path="/autosubmit" element={<AutoSubmitRedirect />} />
 
         {/* <Route path="/aboutus" element={<AboutUs/>}/> */}
 
         {/* Add other routes as needed */}
       </Routes>
-      <Footer />
-      <QuickLinkFooter />
-=======
-      </Routes> */}
+
+ 
 
       <div id="main-content">
         <Routes>
@@ -55,13 +52,14 @@ const App = () => {
           <Route path="/websitepolicy" element={<WebsitePolicy />} />
           <Route path="/feedback" element={<FeedbackForm />} />
           <Route path="/help" element={<Help />} />
+              <Route path="/loginwithepramaan" element={<LoginPageWithEpramaan />} />
           {/* Add other routes as needed */}
         </Routes>
       </div>
       
           <Footer/>
       <QuickLinkFooter/>
->>>>>>> 19fc2714709d1f466355da7d7fdd74a4911e6baa
+
     </>
   );
 };
