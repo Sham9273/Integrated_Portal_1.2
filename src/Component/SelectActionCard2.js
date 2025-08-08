@@ -148,7 +148,7 @@ export default function SelectActionCard() {
                     <Button
                       variant="contained"
                       size="small"
-                      sx={{ mt: 1, backgroundColor: '#32d219ff', color: '#fff' }}
+                      sx={{ mt: 1, backgroundColor: '#318524ff', color: '#fff' }}
                       onClick={() => {
                         // Example: open a link or show an alert
                         if (card.url) {

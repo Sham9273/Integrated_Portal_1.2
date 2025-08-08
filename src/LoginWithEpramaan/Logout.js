@@ -1,10 +1,13 @@
 import React from 'react';
 import { Button } from '@mui/material';
+import BaseLocal from '../URLS/BaseLocal';
+import EpramaanUrlforLogout from '../URLS/EpramaanUrlforLogout';
 
 const Logout = () => {
     const handleLogout = async () => {
         try {
-            const res = await fetch('http://localhost:8080/Logout2', {
+            // const res = await fetch('http://localhost:8080/Logout2', {
+             const res = await fetch(BaseLocal+'Logout2', {
                 method: 'GET',
                 credentials: 'include',
             });
@@ -27,7 +30,10 @@ const Logout = () => {
             // Step 4: Submit only the inner data
             const form = document.createElement('form');
             form.method = 'POST';
-            form.action = 'https://epstg.meripehchaan.gov.in/openid/jwt/processOIDCSLORequest.do';
+            // form.action = 'https://epstg.meripehchaan.gov.in/openid/jwt/processOIDCSLORequest.do';
+            // form.action = 'https://localhost:8081/openid/jwt/processOIDCSLORequest.do';
+
+            form.action = EpramaanUrlforLogout;
 
             const textarea = document.createElement('textarea');
             textarea.name = 'data';
