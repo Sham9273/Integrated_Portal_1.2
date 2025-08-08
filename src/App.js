@@ -21,45 +21,10 @@ const App = () => {
   return (
     <>
       <Navbar />
-<<<<<<< HEAD
-      {/* <Home /> */}
-      {/* <SelectActionCard/> */}
-
-
-      <Routes>
-
-      {/* <Routes>
-
-        <Route path="/intportal" element={<Home />} />
-        <Route path="/contact" element={<ContactUs />} />
-
-        <Route path="/loginwithepramaan" element={<LoginPageWithEpramaan />} />
-
-        <Route path="/login" element={<Login />} />
-
-        <Route path="/autosubmit" element={<AutoSubmitRedirect />} />
-
-        {/* <Route path="/aboutus" element={<AboutUs/>}/> */}
-
-        {/* Add other routes as needed */}
-      </Routes>
-
- 
-=======
->>>>>>> 92581cf5d448af2947c7ca1eced250e1462b2e16
-
       <div id="main-content">
         <Routes>
           <Route path="/intportal" element={<Home />} />
-<<<<<<< HEAD
-          <Route path="/contact" element={<ContactUs />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/aboutus" element={<AboutUs/>}/>
-          <Route path="/websitepolicy" element={<WebsitePolicy />} />
-          <Route path="/feedback" element={<FeedbackForm />} />
-          <Route path="/help" element={<Help />} />
-              <Route path="/loginwithepramaan" element={<LoginPageWithEpramaan />} />
-=======
+          <Route path="/loginwithepramaan" element={<LoginPageWithEpramaan />} />
           <Route path="/intportal/contact" element={<ContactUs />} />
           <Route path="/intportal/websitepolicy" element={<WebsitePolicy />} />
           <Route path="/intportal/help" element={<Help />} />
@@ -69,8 +34,6 @@ const App = () => {
 
           <Route path="/intportal/autosubmit" element={<AutoSubmitRedirect />} />
           <Route path="/intportal/loginwithepramaan" element={<LoginPageWithEpramaan />} />
-
->>>>>>> 92581cf5d448af2947c7ca1eced250e1462b2e16
           {/* Add other routes as needed */}
 
           {/* <Route path="/aboutus" element={<AboutUs />} /> */}
@@ -78,15 +41,8 @@ const App = () => {
 
         </Routes>
       </div>
-<<<<<<< HEAD
-      
           <Footer/>
       <QuickLinkFooter/>
-=======
-
-      <Footer />
-      <QuickLinkFooter />
->>>>>>> 92581cf5d448af2947c7ca1eced250e1462b2e16
 
     </>
   );
