@@ -5,17 +5,17 @@ import EpramaanUrlforLogout from '../URLS/EpramaanUrlforLogout';
 import { useState } from 'react';
 
 const Logout = () => {
- const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
 
     const handleLogout = async () => {
         try {
             // const res = await fetch('http://localhost:8080/Logout2', {
-             const res = await fetch(BaseLocal+'Logout2', {
+            const res = await fetch(BaseLocal + 'Logout2', {
                 method: 'GET',
                 credentials: 'include',
             });
 
-           
+
             const result = await res.json();
 
             // Step 1: Parse inner JSON
@@ -57,9 +57,33 @@ const Logout = () => {
     };
 
     return (
-        <Button variant="contained" onClick={handleLogout}>
-            Logout
-        </Button>
+        // <Button variant="contained" size='small' onClick={handleLogout}>
+        //     Logout
+        // </Button>
+
+        <>
+            <Button
+                variant="contained"
+                size="small"
+                onClick={handleLogout}
+                sx={{
+                    backgroundColor: "#d32f2f",       // red shade
+                    color: "#fff",                    // white text
+                    textTransform: "none",            // normal case
+                    fontWeight: "bold",
+                    borderRadius: "8px",              // rounded corners
+                    padding: "4px 12px",
+                    boxShadow: "0px 3px 6px rgba(0,0,0,0.2)",
+                    "&:hover": {
+                        backgroundColor: "#b71c1c",     // darker red on hover
+                        boxShadow: "0px 4px 10px rgba(0,0,0,0.3)",
+                    },
+                }}
+            >
+                Logout
+            </Button>
+
+        </>
     );
 };
 

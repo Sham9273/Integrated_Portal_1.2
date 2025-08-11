@@ -8,7 +8,7 @@ const Marquee = () => {
         overflow: 'hidden',
         whiteSpace: 'nowrap',
         backgroundColor: '#e3f2fd',
-        py: 1,
+        // py: 1,
         borderTop: '2px solid #90caf9',
         borderBottom: '2px solid #90caf9',
         fontWeight: 'bold',

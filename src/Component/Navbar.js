@@ -37,7 +37,6 @@ export default function Navbar({ isAuthenticated, setIsAuthenticated }) {
   const navigate = useNavigate();
   const [loginOpen, setLoginOpen] = useState(false);
 
-
   // const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [username, setUsername] = useState('');
 
@@ -217,6 +216,32 @@ export default function Navbar({ isAuthenticated, setIsAuthenticated }) {
             ) : (
               <Box sx={{ display: 'flex', gap: 3 }}>
                 <SearchComponent />
+                {/* {menuItems.map(({ label, icon }) => (
+                  <motion.div
+                    key={label}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    style={{ cursor: 'pointer' }}
+                    onClick={() => handleNavigation(label.toLowerCase())}
+                  >
+                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                      {icon}
+                      <Typography
+                        variant="button"
+                        sx={{
+                          color: '#fff',
+                          fontWeight: 400,
+                          fontSize: '0.95rem',
+                          '&:hover': { color: '#000' },
+                        }}
+                      >
+                        <span style={{ fontSize: '0.85rem', color: 'black', fontFamily: 'Cambria, serif' }}>
+                          {label}
+                        </span>
+                      </Typography>
+                    </Box>
+                  </motion.div>
+                ))} */}
 
                 {/* Common menu items */}
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => handleNavigation('home')}>
@@ -242,7 +267,9 @@ export default function Navbar({ isAuthenticated, setIsAuthenticated }) {
 
                 {/* Login / Logout button */}
                 {isAuthenticated ? (
-                   <Logout onLogout={() => setIsAuthenticated(false)} />
+                  //  <Logout onLogout={() => setIsAuthenticated(false)} />
+
+                  <Logout onLogout={() => setIsAuthenticated(false)} />
                 ) : (
                   <motion.div
                     whileHover={{ scale: 1.05 }}
@@ -250,12 +277,52 @@ export default function Navbar({ isAuthenticated, setIsAuthenticated }) {
                     style={{ cursor: 'pointer' }}
                     onClick={() => setLoginOpen(true)}
                   >
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                    {/* <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                       <LoginIcon sx={{ fontSize: 18, color: '#ff9800' }} />
                       <Typography variant="button" sx={{ color: '#000' }}>
                         Login
                       </Typography>
+                    </Box> */}
+
+                    <Box
+                      // onClick={handleLogin}
+                      sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 1,
+                        backgroundColor: '#ffffff',
+                        border: '1px solid #ff9800',       // orange accent
+                        // borderRadius: '6px',
+                        // padding: '6px 12px',
+                        // cursor: 'pointer',
+
+                        borderRadius: '4px',                // slightly smaller radius
+                        padding: '2px 4px',                 // reduced padding
+                        fontSize: '0.5rem',                  // smaller font size
+                        transition: 'all 0.2s ease-in-out',
+                        '&:hover': {
+                          backgroundColor: '#fff3e0',      // subtle orange tint
+                          boxShadow: '0 2px 6px rgba(0,0,0,0.15)',
+                        },
+                        '&:active': {
+                          transform: 'scale(0.97)',
+                        }
+                      }}
+                    >
+                      <LoginIcon sx={{ fontSize: 18, color: '#ff9800' }} />
+                      <Typography
+                        variant="button"
+                        sx={{
+                          color: '#ff9800',
+                          fontWeight: 'bold',
+                          textTransform: 'none',
+                        }}
+                      >
+                        Login
+                      </Typography>
                     </Box>
+
+
                   </motion.div>
                 )}
 
@@ -280,9 +347,6 @@ export default function Navbar({ isAuthenticated, setIsAuthenticated }) {
       >
         {drawer}
       </Drawer>
-
-
-
       <Dialog open={loginOpen} onClose={() => setLoginOpen(false)} maxWidth="sm" fullWidth>
         <DialogContent>
           <LoginWithEpramaan onSuccess={() => {
