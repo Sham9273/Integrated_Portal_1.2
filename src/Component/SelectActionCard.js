@@ -72,7 +72,7 @@ export default function SelectActionCard() {
         >
           Services
         </Typography>
-        <Logout />
+        {/* <Logout /> */}
       </Box>
       <hr />
       <br />
