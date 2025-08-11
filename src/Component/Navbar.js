@@ -87,8 +87,13 @@ export default function Navbar({ isAuthenticated, setIsAuthenticated }) {
 
   const menuItems = [
     {
-      label: 'Home',
-      icon: <HomeIcon sx={{ fontSize: 18, color: '#07720a' }} />,
+       label: 'Home',
+      // label: (
+      //   <Typography sx={{ fontFamily: 'Cambria, serif' }}>
+      //     Home
+      //   </Typography>
+      // ),
+      icon: <HomeIcon sx={{ fontSize: 18, color: '#07720a', }} />,
       onClick: () => handleNavigation('home')
     },
     {
@@ -146,10 +151,12 @@ export default function Navbar({ isAuthenticated, setIsAuthenticated }) {
           <ListItem button key={label} onClick={() => handleNavigation(label.toLowerCase())}>
             <ListItemIcon>{icon}</ListItemIcon>
             <ListItemText
-              primary={<span style={{ fontSize: '0.85rem', color: 'black' }}>{label}</span>}
+              primary={<span style={{ fontSize: '0.85rem', color: 'black', }}>{label}</span>}
             />
           </ListItem>
         ))}
+
+
       </List>
     </Box>
   );
@@ -247,21 +254,21 @@ export default function Navbar({ isAuthenticated, setIsAuthenticated }) {
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => handleNavigation('home')}>
                   <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                     <HomeIcon sx={{ fontSize: 18, color: '#07720aff' }} />
-                    <Typography variant="button" sx={{ color: '#000' }}>Home</Typography>
+                    <Typography variant="button" sx={{ color: '#000',  fontFamily: 'Cambria, serif'  }}>Home</Typography>
                   </Box>
                 </motion.div>
 
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => handleNavigation('contact')}>
                   <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                     <ContactMailIcon sx={{ fontSize: 18, color: '#2196f3' }} />
-                    <Typography variant="button" sx={{ color: '#000' }}>Contact</Typography>
+                    <Typography variant="button" sx={{ color: '#000',   fontFamily: 'Cambria, serif'  }}>Contact</Typography>
                   </Box>
                 </motion.div>
 
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => handleNavigation('help')}>
                   <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                     <HelpOutlineIcon sx={{ fontSize: 18, color: '#a5a322ff' }} />
-                    <Typography variant="button" sx={{ color: '#000' }}>Help</Typography>
+                    <Typography variant="button" sx={{ color: '#000',  fontFamily: 'Cambria, serif'  }}>Help</Typography>
                   </Box>
                 </motion.div>
 
