@@ -27,18 +27,18 @@ import IntranetPortalicon from '../images/icons/12.png';
 import Logout from '../LoginWithEpramaan/Logout';
 
 const cards = [
-  { id: 1, title: 'Webmail', icon: webmailicon,buttonText: 'Open Webmail', }, //, url: 'https://webmail4.cdac.in/appsuite/sample297.php'
-  { id: 2, title: 'IHRMS', icon: ihrmsicon, buttonText: 'Coming Soon' },
-  { id: 3, title: 'eMulazim', icon: eMulazimicon, buttonText: 'Coming Soon' },
-  { id: 4, title: 'APAR', icon: APARicon, buttonText: 'Coming Soon' }, //, url: ''
-  { id: 5, title: 'Asset Management', icon: AssetManagementicon, buttonText: 'Coming Soon' },
-  { id: 6, title: 'Help Desk', icon: HelpDeskicon, buttonText: 'Coming Soon' },
-  { id: 7, title: 'Visitor Management', icon: VistorManagementicon, buttonText: 'Coming Soon' },
-  { id: 8, title: 'Project Management', icon: ProjectManagementicon, buttonText: 'Coming Soon' },
-  { id: 9, title: 'CAKES', icon: CAKESicon, buttonText: 'Coming Soon' },
-  { id: 10, title: 'Corporate Learning & Development Platform', icon: CorporateLearningDevelopmentPlatformicon, buttonText: 'Coming Soon' },
-  { id: 11, title: 'CDAC Website', icon: CDACWebsiteicon, buttonText: 'Coming Soon' },
-  { id: 12, title: 'Intranet Portal', icon: IntranetPortalicon, buttonText: 'Coming Soon' },
+  { id: 1, title: 'Webmail', icon: webmailicon,buttonText: 'Click Here', url: 'https://webmail4.cdac.in/appsuite/sample297.php'}, //, url: 'https://webmail4.cdac.in/appsuite/sample297.php'
+  { id: 2, title: 'IHRMS', icon: ihrmsicon, buttonText: 'Click Here' },
+  { id: 3, title: 'eMulazim', icon: eMulazimicon, buttonText: 'Click Here' },
+  { id: 4, title: 'APAR', icon: APARicon, buttonText: 'Click Here' }, //, url: ''
+  { id: 5, title: 'Asset Management', icon: AssetManagementicon, buttonText: 'Click Here' },
+  { id: 6, title: 'Help Desk', icon: HelpDeskicon, buttonText: 'Click Here' },
+  { id: 7, title: 'Visitor Management', icon: VistorManagementicon, buttonText: 'Click Here' },
+  { id: 8, title: 'Project Management', icon: ProjectManagementicon, buttonText: 'Click Here' },
+  { id: 9, title: 'CAKES', icon: CAKESicon, buttonText: 'Click Here' },
+  { id: 10, title: 'Corporate Learning & Development Platform', icon: CorporateLearningDevelopmentPlatformicon, buttonText: 'Click Here' },
+  { id: 11, title: 'CDAC Website', icon: CDACWebsiteicon, buttonText: 'Click Here' },
+  { id: 12, title: 'Intranet Portal', icon: IntranetPortalicon, buttonText: 'Click Here' },
 ];
 
 export default function SelectActionCard() {
@@ -345,7 +345,7 @@ export default function SelectActionCard() {
 //                       color="text.secondary"
 //                       sx={{ textAlign: 'center', fontStyle: 'italic' }}
 //                     >
-//                       Coming Soon
+//                       Click Here
 //                     </Typography>
 //                   </Box>
 //                 </CardContent>

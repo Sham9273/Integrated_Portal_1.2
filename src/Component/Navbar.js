@@ -243,7 +243,7 @@ export default function Navbar({ isAuthenticated, setIsAuthenticated }) {
                     </Box>
                   </motion.div>
                 ))} */}
-                <SearchComponent />
+
 
                 {/* Common menu items */}
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => handleNavigation('home')}>
@@ -269,9 +269,9 @@ export default function Navbar({ isAuthenticated, setIsAuthenticated }) {
 
                 {/* Login / Logout button */}
                 {isAuthenticated ? (
-                 
 
-                   <Logout onLogout={() => setIsAuthenticated(false)} />
+
+                  <Logout onLogout={() => setIsAuthenticated(false)} />
                 ) : (
                   <motion.div
                     whileHover={{ scale: 1.05 }}
@@ -279,12 +279,52 @@ export default function Navbar({ isAuthenticated, setIsAuthenticated }) {
                     style={{ cursor: 'pointer' }}
                     onClick={() => setLoginOpen(true)}
                   >
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                    {/* <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                       <LoginIcon sx={{ fontSize: 18, color: '#ff9800' }} />
                       <Typography variant="button" sx={{ color: '#000' }}>
                         Login
                       </Typography>
+                    </Box> */}
+
+                    <Box
+                      // onClick={handleLogin}
+                      sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 1,
+                        backgroundColor: '#ffffff',
+                        border: '1px solid #ff9800',       // orange accent
+                        // borderRadius: '6px',
+                        // padding: '6px 12px',
+                        // cursor: 'pointer',
+
+                        borderRadius: '4px',                // slightly smaller radius
+                        padding: '2px 4px',                 // reduced padding
+                        fontSize: '0.5rem',                  // smaller font size
+                        transition: 'all 0.2s ease-in-out',
+                        '&:hover': {
+                          backgroundColor: '#fff3e0',      // subtle orange tint
+                          boxShadow: '0 2px 6px rgba(0,0,0,0.15)',
+                        },
+                        '&:active': {
+                          transform: 'scale(0.97)',
+                        }
+                      }}
+                    >
+                      <LoginIcon sx={{ fontSize: 18, color: '#ff9800' }} />
+                      <Typography
+                        variant="button"
+                        sx={{
+                          color: '#ff9800',
+                          fontWeight: 'bold',
+                          textTransform: 'none',
+                        }}
+                      >
+                        Login
+                      </Typography>
                     </Box>
+
+
                   </motion.div>
                 )}
 
