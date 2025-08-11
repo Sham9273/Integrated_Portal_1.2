@@ -2,8 +2,11 @@ import React from 'react';
 import { Button } from '@mui/material';
 import BaseLocal from '../URLS/BaseLocal';
 import EpramaanUrlforLogout from '../URLS/EpramaanUrlforLogout';
+import { useState } from 'react';
 
 const Logout = () => {
+ const [isAuthenticated, setIsAuthenticated] = useState(false);
+
     const handleLogout = async () => {
         try {
             // const res = await fetch('http://localhost:8080/Logout2', {
@@ -43,6 +46,8 @@ const Logout = () => {
             form.appendChild(textarea);
             document.body.appendChild(form);
             form.submit();
+
+            setIsAuthenticated(false);
 
 
         } catch (error) {

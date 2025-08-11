@@ -15,12 +15,19 @@ import FeedbackForm from './Pages/FeedbackForm';
 import AutoSubmitRedirect from './LoginWithEpramaan/AutoSubmitRedirect';
 import LoginPageWithEpramaan from './LoginWithEpramaan/LoginPageWithEpramaan';
 import HomeAfterLogin from './Pages/HomeAfterLogin'
-
+import { useState } from 'react';
 const App = () => {
+
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   <Router></Router>
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
+
+      <Navbar
+        isAuthenticated={isAuthenticated}
+        setIsAuthenticated={setIsAuthenticated}
+      />
 
       {/* <Home /> */}
       {/* <SelectActionCard/> */}
@@ -47,8 +54,8 @@ const App = () => {
 
       <div id="main-content">
         <Routes>
-          <Route path="/intportal1" element={<Home />} />
-<Route path="/intportal" element={<HomeAfterLogin />} />
+          <Route path="/intportal" element={<Home isAuthenticated={isAuthenticated}/>} />
+          {/* <Route path="/intportal" element={<HomeAfterLogin />} /> */}
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/login" element={<Login />} />
           <Route path="/aboutus" element={<AboutUs />} />
@@ -81,7 +88,7 @@ const App = () => {
       <QuickLinkFooter />
 
 
-     
+
 
     </>
   );

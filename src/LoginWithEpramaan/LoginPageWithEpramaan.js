@@ -60,10 +60,10 @@ const LoginPageWithEpramaan = () => {
             }}
         >
             <Paper elevation={3} sx={{ padding: 4, width: 350 }}>
-                <Typography variant="h5" fontWeight="bold" gutterBottom>
+                {/* <Typography variant="h5" fontWeight="bold" gutterBottom>
                     Login
-                </Typography>
-                <form onSubmit={handleLogin}>
+                </Typography> */}
+                {/* <form onSubmit={handleLogin}>
                     <TextField
                         label="Username"
                         variant="outlined"
@@ -93,7 +93,7 @@ const LoginPageWithEpramaan = () => {
                     >
                         Login
                     </Button>
-                </form>
+                </form> */}
 
                 <Typography variant="body2" align="center" mt={2}>
                     <Button

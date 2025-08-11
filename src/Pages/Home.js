@@ -41,7 +41,7 @@ function ScrollTop(props) {
   );
 }
 
-export default function Home(props) {
+export default function Home({ isAuthenticated, ...props }) {
   return (
     <>
       {/* Scroll Anchor */}
@@ -64,9 +64,9 @@ export default function Home(props) {
 
       {/* Marquee Section */}
       <Marquee />
-      <SelectActionCard />
+      {/* <SelectActionCard /> */}
       {/* <SelectActionCard2/> */}
-
+      {isAuthenticated ? <SelectActionCard2 /> : <SelectActionCard />}
       {/* Scroll to top button (always visible on scroll) */}
       <ScrollTop {...props}>
         <Fab size="small" color="primary" aria-label="scroll back to top">
