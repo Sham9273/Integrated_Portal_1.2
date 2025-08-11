@@ -7,6 +7,7 @@ import Marquee from '../Component/Marquee';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import SelectActionCard from '../Component/SelectActionCard';
 import SelectActionCard2 from '../Component/SelectActionCard2'
+import Tooltip from '@mui/material/Tooltip';
 
 function ScrollTop(props) {
   const { children, window } = props;
@@ -69,9 +70,11 @@ export default function Home({ isAuthenticated, ...props }) {
       {isAuthenticated ? <SelectActionCard2 /> : <SelectActionCard />}
       {/* Scroll to top button (always visible on scroll) */}
       <ScrollTop {...props}>
+          <Tooltip title="Scroll Back to Top" arrow>
         <Fab size="small" color="primary" aria-label="scroll back to top">
           <KeyboardArrowUpIcon />
         </Fab>
+        </Tooltip>
       </ScrollTop>
     </>
   );

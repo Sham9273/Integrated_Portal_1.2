@@ -29,6 +29,16 @@ const App = () => {
           <Route path="/intportal/sitemap" element={<SiteMap />} />
           <Route path="/intportal/autosubmit" element={<AutoSubmitRedirect />} />
           <Route path="/intportal/loginwithepramaan" element={<LoginPageWithEpramaan />} />
+
+
+
+           {/* <Route path="/" element={<Home isAuthenticated={isAuthenticated}/>} />
+          <Route path="/contact" element={<ContactUs />} />
+          <Route path="/websitepolicy" element={<WebsitePolicy />} />
+          <Route path="/help" element={<Help />} />
+          <Route path="/sitemap" element={<SiteMap />} />
+          <Route path="/autosubmit" element={<AutoSubmitRedirect />} />
+          <Route path="/loginwithepramaan" element={<LoginPageWithEpramaan />} /> */}
           {/* Add other routes as needed */}
 
           {/* <Route path="/loginwithepramaan" element={<LoginPageWithEpramaan />} /> */}

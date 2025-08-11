@@ -110,31 +110,33 @@ const LoginPageWithEpramaan = () => {
                 </Typography> */}
 
             {/* <Typography variant="body2" align="center" mt={2}> */}
-                <Button
-                    variant="contained"
-                    onClick={handleClick}
-                    startIcon={<LoginIcon sx={{ fontSize: 16 }} />}
-                    sx={{
-                        backgroundColor: '#ff9800',
-                        color: '#fff',
-                        textTransform: 'none',
-                        fontWeight: 600,
-                        fontSize: '0.75rem',
-                        padding: '4px 10px',
-                        borderRadius: '6px',
-                        minWidth: 'auto',
-                        boxShadow: 'none',
-                        '&:hover': {
-                            backgroundColor: '#fb8c00',
-                            boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
-                        },
-                        '&:active': {
-                            transform: 'scale(0.97)',
-                        }
-                    }}
-                >
-                    Login
-                </Button>
+            <Button
+                variant="contained"
+                onClick={handleClick}
+                startIcon={<LoginIcon sx={{ fontSize: 16 }} />}
+                sx={{
+                    backgroundColor: '#ff9800',
+                    color: '#fff',
+                    textTransform: 'none',
+                    fontWeight: 600,
+                    fontFamily: 'Cambria, serif',
+                    fontSize: '0.75rem',
+                    padding: '3px 12px',
+                    borderRadius: '6px',
+                    minWidth: 'auto',
+                    boxShadow: 'none',
+
+                    '&:hover': {
+                        backgroundColor: '#fb8c00',
+                        boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
+                    },
+                    '&:active': {
+                        transform: 'scale(0.97)',
+                    }
+                }}
+            >
+                Login
+            </Button>
             {/* </Typography> */}
 
 
