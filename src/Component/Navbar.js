@@ -35,7 +35,7 @@ export default function Navbar({ isAuthenticated, setIsAuthenticated }) {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const navigate = useNavigate();
-  const [loginOpen, setLoginOpen] = useState(false);
+  // const [loginOpen, setLoginOpen] = useState(false);
 
   // const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [username, setUsername] = useState('');
@@ -275,7 +275,7 @@ export default function Navbar({ isAuthenticated, setIsAuthenticated }) {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     style={{ cursor: 'pointer' }}
-                    onClick={() => setLoginOpen(true)}
+                  // onClick={() => setLoginOpen(true)}
                   >
                     {/* <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                       <LoginIcon sx={{ fontSize: 18, color: '#ff9800' }} />
@@ -284,7 +284,7 @@ export default function Navbar({ isAuthenticated, setIsAuthenticated }) {
                       </Typography>
                     </Box> */}
 
-                    <Box
+                    {/* <Box
                       // onClick={handleLogin}
                       sx={{
                         display: 'flex',
@@ -320,9 +320,9 @@ export default function Navbar({ isAuthenticated, setIsAuthenticated }) {
                       >
                         Login
                       </Typography>
-                    </Box>
+                    </Box> */}
 
-
+                    <LoginWithEpramaan />
                   </motion.div>
                 )}
 
@@ -336,7 +336,7 @@ export default function Navbar({ isAuthenticated, setIsAuthenticated }) {
       <Box sx={{ mt: '80px' }} />
 
       {/* Drawer for mobile menu */}
-      <Drawer
+      {/* <Drawer
         anchor="right"
         open={mobileOpen}
         onClose={() => setMobileOpen(false)}
@@ -346,15 +346,15 @@ export default function Navbar({ isAuthenticated, setIsAuthenticated }) {
         }}
       >
         {drawer}
-      </Drawer>
-      <Dialog open={loginOpen} onClose={() => setLoginOpen(false)} maxWidth="sm" fullWidth>
+      </Drawer> */}
+      {/* <Dialog open={loginOpen} onClose={() => setLoginOpen(false)} maxWidth="sm" fullWidth>
         <DialogContent>
           <LoginWithEpramaan onSuccess={() => {
             setIsAuthenticated(true);
             setLoginOpen(false);
           }} />
         </DialogContent>
-      </Dialog>
+      </Dialog> */}
 
     </>
   );
