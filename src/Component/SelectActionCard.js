@@ -66,9 +66,6 @@ export default function SelectActionCard() {
         <Typography
           variant="h4"
           sx={{
-
-            fontFamily: 'Cambria, serif',
-
             fontFamily: 'Cambria, serif',
             color: '#0c4a88ff',
           }}

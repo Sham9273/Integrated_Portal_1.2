@@ -6,6 +6,7 @@ import {
     Typography,
     Paper
 } from '@mui/material';
+import BaseLocal from '../URLS/BaseLocal';
 
 const LoginPageWithEpramaan = () => {
     const [username, setUsername] = useState('');
@@ -27,7 +28,8 @@ const LoginPageWithEpramaan = () => {
 
     const handleClick = async () => {
         try {
-            const res = await fetch('http://localhost:8080/Demo2');
+            // const res = await fetch('http://localhost:8080/Demo2');
+             const res = await fetch(BaseLocal+'Demo2');
             const data = await res.json();
 
             if (data.redirectionURL) {

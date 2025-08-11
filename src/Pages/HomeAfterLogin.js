@@ -64,8 +64,8 @@ export default function Home(props) {
 
       {/* Marquee Section */}
       <Marquee />
-      <SelectActionCard />
-      {/* <SelectActionCard2/> */}
+      {/* <SelectActionCard /> */}
+      <SelectActionCard2/>
 
       {/* Scroll to top button (always visible on scroll) */}
       <ScrollTop {...props}>
