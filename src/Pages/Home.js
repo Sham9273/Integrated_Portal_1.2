@@ -49,7 +49,7 @@ export default function Home({ isAuthenticated, ...props }) {
       <Box sx={{ height: 0 }} id="back-to-top-anchor" />
 
       {/* Banner Section */}
-      <Slide in={true} direction="down" timeout={600}>
+      <Slide in={true} direction="down" timeout={1200}>
         <Box sx={{ textAlign: 'center', pt: 0 }}>
           <img
             src={banner}

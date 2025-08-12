@@ -10,6 +10,7 @@ import ContactUs from './Pages/ContactUs'
 import AutoSubmitRedirect from './LoginWithEpramaan/AutoSubmitRedirect';
 import LoginPageWithEpramaan from './LoginWithEpramaan/LoginPageWithEpramaan';
 import { useState } from 'react';
+import ErrorPage from './Pages/ErrorPage'
 const App = () => {
 
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -29,6 +30,7 @@ const App = () => {
           <Route path="/intportal/sitemap" element={<SiteMap />} />
           <Route path="/intportal/autosubmit" element={<AutoSubmitRedirect />} />
           <Route path="/intportal/loginwithepramaan" element={<LoginPageWithEpramaan />} />
+           <Route path="*" element={<ErrorPage />} />
 
 
 
