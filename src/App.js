@@ -30,8 +30,7 @@ const App = () => {
           <Route path="/intportal/sitemap" element={<SiteMap />} />
           <Route path="/intportal/autosubmit" element={<AutoSubmitRedirect />} />
           <Route path="/intportal/loginwithepramaan" element={<LoginPageWithEpramaan />} />
-           <Route path="*" element={<ErrorPage />} />
-
+          <Route path="*" element={<ErrorPage />} />
 
 
            {/* <Route path="/" element={<Home isAuthenticated={isAuthenticated}/>} />

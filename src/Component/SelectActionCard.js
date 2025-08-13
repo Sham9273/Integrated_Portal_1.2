@@ -5,7 +5,6 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import CardActionArea from '@mui/material/CardActionArea';
 import { motion } from 'framer-motion';
-//import FormatListBulletedSharpIcon from '@mui/icons-material/FormatListBulletedSharp';
 import PageHeading from './PageHeading';
 import bg2 from '../images/bgbg.jpg';
 
@@ -22,14 +21,12 @@ import CAKESicon from '../images/icons/9.png';
 import CorporateLearningDevelopmentPlatformicon from '../images/icons/10.png';
 import CDACWebsiteicon from '../images/icons/11.png';
 import IntranetPortalicon from '../images/icons/12.png';
-//import { Button } from '@mui/material';
-import Logout from '../LoginWithEpramaan/Logout';
 
 const cards = [
-  { id: 1, title: 'Webmail', icon: webmailicon, description: 'Email platform to compose, send, receive, organize your inbox, and manage contacts effortlessly.' }, //, url: 'https://webmail4.cdac.in/appsuite/sample297.php'
+  { id: 1, title: 'Webmail', icon: webmailicon, description: 'Email platform to compose, send, receive, organize your inbox, and manage contacts effortlessly.' },
   { id: 2, title: 'IHRMS', icon: ihrmsicon, description: 'HR solution to manage employee profiles, payroll, reimbursements, leaves, and attendance, with automated tax calculations and salary slip generation.' },
   { id: 3, title: 'eMulazim', icon: eMulazimicon, description: 'Streamline file workflows with easy document sharing, automated approvals, and real-time tracking for faster decision-making.' },
-  { id: 4, title: 'APAR', icon: APARicon, description: 'Simplify annual performance tracking with centralized employee reports, metrics, and actionable insights.' }, //, url: ''
+  { id: 4, title: 'APAR', icon: APARicon, description: 'Simplify annual performance tracking with centralized employee reports, metrics, and actionable insights.' },
   { id: 5, title: 'Asset Management', icon: AssetManagementicon, description: 'Track, maintain, and manage assets across their entire lifecycle, from procurement to disposal, with built-in compliance, maintenance, and reporting tools.' },
   { id: 6, title: 'Help Desk', icon: HelpDeskicon, description: 'Coming Soon' },
   { id: 7, title: 'Visitor Management', icon: VistorManagementicon, description: 'Coming Soon' },
@@ -42,6 +39,7 @@ const cards = [
 
 export default function SelectActionCard() {
   const [selectedCard, setSelectedCard] = React.useState(null);
+
   return (
     <Box
       sx={{
@@ -62,7 +60,6 @@ export default function SelectActionCard() {
           mb: 4,
         }}
       >
-        {/* <FormatListBulletedSharpIcon sx={{ fontSize: '3rem', color: 'grey', mr: 1 }} /> */}
         <Typography
           variant="h4"
           sx={{
@@ -72,7 +69,6 @@ export default function SelectActionCard() {
         >
           Services
         </Typography>
-        {/* <Logout /> */}
       </Box>
       <hr />
       <br />
@@ -87,6 +83,8 @@ export default function SelectActionCard() {
         {cards.map((card, index) => (
           <motion.div
             key={card.id}
+            id={card.title.toLowerCase().replace(/\s+/g, '-')}
+            // style={{ scrollerMarginTop: '84px' }}
             initial={{ x: index % 2 === 0 ? -150 : 150, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{
@@ -100,16 +98,6 @@ export default function SelectActionCard() {
           >
             <Card
               elevation={selectedCard === index ? 10 : 3}
-              // sx={{
-              //   height: '220px',
-              //   borderRadius: '10px',
-              //   transition: 'all 0.3s ease-in-out',
-              //   transform: selectedCard === index ? 'scale(1.02)' : 'scale(1)',
-              //   border:
-              //     selectedCard === index ? '2px solid #1976d2' : '1px solid #ccc',
-              //   backgroundColor: 'rgba(255, 255, 255, 0.9)',
-              // }}
-
               sx={{
                 height: '240px',
                 borderRadius: '16px',
@@ -128,24 +116,13 @@ export default function SelectActionCard() {
                 }
               }}
             >
-              <CardActionArea sx={{ height: '100%' }}
-
-                onClick={() => {
-                  setSelectedCard(index);
-                  if (card.url) {
-                    window.open(card.url, '_blank'); // opens in new tab
-                    // window.location.href = card.url; // use this if you want same tab
-                  }
-                }}
-
-              >
+              <CardActionArea sx={{ height: '100%' }}>
                 <CardContent sx={{ height: '100%' }}>
                   <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                     <Box sx={{ mb: 1 }}>
                       <img
                         src={card.icon}
                         alt={`${card.title} Icon`}
-                        // style={{ width: '40px', height: '40px' }}
                         style={{
                           width: '48px',
                           height: '48px',
@@ -157,13 +134,6 @@ export default function SelectActionCard() {
                     <Typography
                       variant="h6"
                       component="div"
-                      // sx={{
-                      //   fontFamily: 'Cambria, serif',
-                      //   fontWeight: 600,
-                      //   mb: 1,
-                      //   color: '#1976d2',
-                      //   textAlign: 'center',
-                      // }}
                       sx={{
                         fontFamily: 'Cambria, serif',
                         fontWeight: 700,
@@ -174,13 +144,6 @@ export default function SelectActionCard() {
                     >
                       {card.title}
                     </Typography>
-                    {/* <Typography
-                      variant="body2"
-                      color="text.secondary"
-                      sx={{ textAlign: 'center', fontStyle: 'italic' }}
-                    >
-                      Coming Soon
-                    </Typography> */}
                     <Typography
                       variant="body2"
                       color="text.secondary"

@@ -8,6 +8,7 @@ import useScrollTrigger from '@mui/material/useScrollTrigger';
 import SelectActionCard from '../Component/SelectActionCard';
 import SelectActionCard2 from '../Component/SelectActionCard2'
 import Tooltip from '@mui/material/Tooltip';
+import { useState} from 'react';
 
 function ScrollTop(props) {
   const { children, window } = props;
@@ -43,6 +44,7 @@ function ScrollTop(props) {
 }
 
 export default function Home({ isAuthenticated, ...props }) {
+  const [activeCard, setActiveCard] = useState('');
   return (
     <>
       {/* Scroll Anchor */}
@@ -67,7 +69,12 @@ export default function Home({ isAuthenticated, ...props }) {
       <Marquee />
       {/* <SelectActionCard /> */}
       {/* <SelectActionCard2/> */}
-      {isAuthenticated ? <SelectActionCard2 /> : <SelectActionCard />}
+
+
+      {/* {isAuthenticated ? <SelectActionCard2 /> : <SelectActionCard />} */}
+
+      {isAuthenticated ? <SelectActionCard2 /> : <SelectActionCard activeCard={activeCard} />}
+
       {/* Scroll to top button (always visible on scroll) */}
       <ScrollTop {...props}>
           <Tooltip title="Scroll Back to Top" arrow>

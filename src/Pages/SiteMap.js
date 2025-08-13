@@ -22,7 +22,7 @@ const SiteMap = () => {
 
     return (
         <Container maxWidth="sm" sx={{ mt: 12, mb: 8 }}>
-            <Box sx={{ p: 4, bgcolor: "#fff", borderRadius: 3, boxShadow: 2 }}>
+            <Box sx={{ p: 4, bgcolor: "#fff", borderRadius: 3, boxShadow: 6}}>
                 <Typography variant="h4" gutterBottom sx={{ fontWeight: "bold", textAlign: "center", color: "#1976d2" }}>
                     Site Map
                 </Typography>

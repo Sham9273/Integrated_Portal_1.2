@@ -35,6 +35,7 @@ export default function Navbar({ isAuthenticated, setIsAuthenticated }) {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const navigate = useNavigate();
+  const [setActiveCard] = useState('');
   // const [loginOpen, setLoginOpen] = useState(false);
 
   // const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -222,34 +223,9 @@ export default function Navbar({ isAuthenticated, setIsAuthenticated }) {
               </IconButton>
             ) : (
               <Box sx={{ display: 'flex', gap: 3 }}>
-                <SearchComponent />
-                {/* {menuItems.map(({ label, icon }) => (
-                  <motion.div
-                    key={label}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    style={{ cursor: 'pointer' }}
-                    onClick={() => handleNavigation(label.toLowerCase())}
-                  >
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                      {icon}
-                      <Typography
-                        variant="button"
-                        sx={{
-                          color: '#fff',
-                          fontWeight: 400,
-                          fontSize: '0.95rem',
-                          '&:hover': { color: '#000' },
-                        }}
-                      >
-                        <span style={{ fontSize: '0.85rem', color: 'black', fontFamily: 'Cambria, serif' }}>
-                          {label}
-                        </span>
-                      </Typography>
-                    </Box>
-                  </motion.div>
-                ))} */}
-
+                {/* <SearchComponent /> */}
+                
+                 <SearchComponent setActiveCard={setActiveCard} />
                 {/* Common menu items */}
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => handleNavigation('home')}>
                   <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
