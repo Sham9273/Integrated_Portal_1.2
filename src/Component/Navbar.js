@@ -164,8 +164,6 @@ export default function Navbar({ isAuthenticated, setIsAuthenticated }) {
 
   const [darkMode, setDarkMode] = useState(false);
 
-
-
   return (
     <>
       <CssBaseline />
