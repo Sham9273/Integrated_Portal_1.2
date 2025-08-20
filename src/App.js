@@ -9,21 +9,56 @@ import SiteMap from './Pages/SiteMap';
 import ContactUs from './Pages/ContactUs'
 import AutoSubmitRedirect from './LoginWithEpramaan/AutoSubmitRedirect';
 import LoginPageWithEpramaan from './LoginWithEpramaan/LoginPageWithEpramaan';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import ErrorPage from './Pages/ErrorPage'
+import BaseLocal from './URLS/BaseLocal';
+import Navbar2 from './Component/Navbar2'
 const App = () => {
 
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  <Router></Router>
+
+//   useEffect(() => {
+//   const clientId = localStorage.getItem("clientId"); // store on login
+
+//   const interval = setInterval(() => {
+//     fetch(BaseLocal+`checkLogoutStatus?clientId=${clientId}`)
+//       .then(res => res.json())
+//       .then(data => {
+//         if (data.logout) {
+//           // perform logout
+//           console.log("--check braodcast:--"+data.logout)
+//           localStorage.clear();
+//           sessionStorage.clear();
+//           // 🔥 Clear cookies (frontend side only)
+//         document.cookie.split(";").forEach(c => {
+//           document.cookie = c
+//             .replace(/^ +/, "")
+//             .replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+//         });
+//           window.location.href = "/intportal";
+//         }
+//       })
+//       .catch(err => console.error("Error checking logout:", err));
+//   }, 5000); // check every 5 seconds
+
+//   return () => clearInterval(interval);
+// }, []);
+
   return (
     <>
-      <Navbar
+      {/* <Navbar
+        isAuthenticated={isAuthenticated}
+        setIsAuthenticated={setIsAuthenticated}
+      /> */}
+
+
+      <Navbar2
         isAuthenticated={isAuthenticated}
         setIsAuthenticated={setIsAuthenticated}
       />
       <div id="main-content">
         <Routes>
-          <Route path="/intportal" element={<Home isAuthenticated={isAuthenticated}/>} />
+          <Route path="/intportal" element={<Home isAuthenticated={isAuthenticated} />} />
           <Route path="/intportal/contact" element={<ContactUs />} />
           <Route path="/intportal/websitepolicy" element={<WebsitePolicy />} />
           <Route path="/intportal/help" element={<Help />} />
@@ -33,7 +68,7 @@ const App = () => {
           <Route path="*" element={<ErrorPage />} />
 
 
-           {/* <Route path="/" element={<Home isAuthenticated={isAuthenticated}/>} />
+          {/* <Route path="/" element={<Home isAuthenticated={isAuthenticated}/>} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/websitepolicy" element={<WebsitePolicy />} />
           <Route path="/help" element={<Help />} />
@@ -45,8 +80,8 @@ const App = () => {
           {/* <Route path="/loginwithepramaan" element={<LoginPageWithEpramaan />} /> */}
         </Routes>
       </div>
-          <Footer/>
-      <QuickLinkFooter/>
+      <Footer />
+      <QuickLinkFooter />
     </>
   );
 };

@@ -35,7 +35,7 @@ export default function Navbar({ isAuthenticated, setIsAuthenticated }) {
   const navigate = useNavigate();
   // const [, setActiveCard] = useState('');
   const [setUsername] = useState('');
-  const [darkMode, setDarkMode] = useState(false);
+  //const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     const checkAuth = async () => {
@@ -99,6 +99,11 @@ export default function Navbar({ isAuthenticated, setIsAuthenticated }) {
     },
   ];
 
+
+  
+
+  // drawer stays same except menuItems now has dynamic Login/Logout
+
   const drawer = (
     <Box sx={{ width: 240 }} onClick={() => setMobileOpen(false)}>
       <List>
@@ -129,7 +134,7 @@ export default function Navbar({ isAuthenticated, setIsAuthenticated }) {
       </List>
     </Box>
   );
-
+  const [darkMode, setDarkMode] = useState(false);
   return (
     <>
       <CssBaseline />

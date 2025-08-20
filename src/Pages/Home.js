@@ -66,7 +66,7 @@ export default function Home({ isAuthenticated, ...props }) {
       </Slide>
 
       {/* Marquee Section */}
-      <Marquee />
+      {/* <Marquee /> */}
       {/* <SelectActionCard /> */}
       {/* <SelectActionCard2/> */}
 
