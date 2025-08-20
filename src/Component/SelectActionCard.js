@@ -7,6 +7,10 @@ import CardActionArea from '@mui/material/CardActionArea';
 import { motion } from 'framer-motion';
 import PageHeading from './PageHeading';
 import bg2 from '../images/bgbg.jpg';
+import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices';
+import BuildIcon from '@mui/icons-material/Build';
+import HomeRepairServiceIcon from '@mui/icons-material/HomeRepairService';
+import DesignServicesIcon from '@mui/icons-material/DesignServices';
 
 // Icon Images
 import webmailicon from '../images/icons/1.png';
@@ -60,6 +64,10 @@ export default function SelectActionCard() {
           mb: 4,
         }}
       >
+        {/* <DesignServicesIcon sx={{ fontSize: 32, color: '#0c4a88ff', mr: 1 }} /> */}
+        <HomeRepairServiceIcon sx={{ fontSize: 32, color: '#0c4a88ff', mr: 1 }} />
+        {/* <BuildIcon sx={{ fontSize: 32, color: '#0c4a88ff', mr: 1 }} /> */}
+        {/* <MiscellaneousServicesIcon sx={{ fontSize: 32, color: '#0c4a88ff', mr: 1 }} /> */}
         <Typography
           variant="h4"
           sx={{

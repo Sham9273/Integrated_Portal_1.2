@@ -12,40 +12,47 @@ import LoginPageWithEpramaan from './LoginWithEpramaan/LoginPageWithEpramaan';
 import { useState,useEffect } from 'react';
 import ErrorPage from './Pages/ErrorPage'
 import BaseLocal from './URLS/BaseLocal';
+import Navbar2 from './Component/Navbar2'
 const App = () => {
 
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  useEffect(() => {
-  const clientId = localStorage.getItem("clientId"); // store on login
+//   useEffect(() => {
+//   const clientId = localStorage.getItem("clientId"); // store on login
 
-  const interval = setInterval(() => {
-    fetch(BaseLocal+`checkLogoutStatus?clientId=${clientId}`)
-      .then(res => res.json())
-      .then(data => {
-        if (data.logout) {
-          // perform logout
-          console.log("--check braodcast:--"+data.logout)
-          localStorage.clear();
-          sessionStorage.clear();
-          // 🔥 Clear cookies (frontend side only)
-        document.cookie.split(";").forEach(c => {
-          document.cookie = c
-            .replace(/^ +/, "")
-            .replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
-        });
-          window.location.href = "/intportal";
-        }
-      })
-      .catch(err => console.error("Error checking logout:", err));
-  }, 5000); // check every 5 seconds
+//   const interval = setInterval(() => {
+//     fetch(BaseLocal+`checkLogoutStatus?clientId=${clientId}`)
+//       .then(res => res.json())
+//       .then(data => {
+//         if (data.logout) {
+//           // perform logout
+//           console.log("--check braodcast:--"+data.logout)
+//           localStorage.clear();
+//           sessionStorage.clear();
+//           // 🔥 Clear cookies (frontend side only)
+//         document.cookie.split(";").forEach(c => {
+//           document.cookie = c
+//             .replace(/^ +/, "")
+//             .replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+//         });
+//           window.location.href = "/intportal";
+//         }
+//       })
+//       .catch(err => console.error("Error checking logout:", err));
+//   }, 5000); // check every 5 seconds
 
-  return () => clearInterval(interval);
-}, []);
+//   return () => clearInterval(interval);
+// }, []);
 
   return (
     <>
-      <Navbar
+      {/* <Navbar
+        isAuthenticated={isAuthenticated}
+        setIsAuthenticated={setIsAuthenticated}
+      /> */}
+
+
+      <Navbar2
         isAuthenticated={isAuthenticated}
         setIsAuthenticated={setIsAuthenticated}
       />

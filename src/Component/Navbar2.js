@@ -29,6 +29,7 @@ import BaseLocal from '../URLS/BaseLocal';
 import Logout from '../LoginWithEpramaan/Logout';
 import { Dialog, DialogContent } from '@mui/material';
 import LoginWithEpramaan from '../LoginWithEpramaan/LoginPageWithEpramaan';
+import Marquee2 from './Marquee2'
 
 export default function Navbar({ isAuthenticated, setIsAuthenticated }) {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -88,7 +89,7 @@ export default function Navbar({ isAuthenticated, setIsAuthenticated }) {
 
   const menuItems = [
     {
-       label: 'Home',
+      label: 'Home',
       // label: (
       //   <Typography sx={{ fontFamily: 'Cambria, serif' }}>
       //     Home
@@ -107,11 +108,11 @@ export default function Navbar({ isAuthenticated, setIsAuthenticated }) {
       icon: <HelpOutlineIcon sx={{ fontSize: 18, color: '#a5a322' }} />,
       onClick: () => handleNavigation('help')
     },
-   
+
   ];
 
 
-  
+
 
   // drawer stays same except menuItems now has dynamic Login/Logout
   const drawer = (
@@ -184,6 +185,14 @@ export default function Navbar({ isAuthenticated, setIsAuthenticated }) {
               </Box>
             </motion.div>
 
+
+            {/* ✅ Marquee between logo and menu */}
+            {!isMobile && (
+              <Box sx={{ flex: 1, mx: 2, overflow: 'hidden' }}>
+                <Marquee2 />
+              </Box>
+            )}
+
             {isMobile ? (
               <IconButton color="inherit" onClick={() => setMobileOpen(true)}>
                 <MenuIcon />
@@ -191,27 +200,27 @@ export default function Navbar({ isAuthenticated, setIsAuthenticated }) {
             ) : (
               <Box sx={{ display: 'flex', gap: 3 }}>
                 {/* <SearchComponent /> */}
-                
-                 <SearchComponent setActiveCard={setActiveCard} />
+
+                {/* <SearchComponent setActiveCard={setActiveCard} /> */}
                 {/* Common menu items */}
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => handleNavigation('home')}>
                   <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                     <HomeIcon sx={{ fontSize: 18, color: '#07720aff' }} />
-                    <Typography variant="button" sx={{ color: '#000',  fontFamily: 'Cambria, serif'  }}>Home</Typography>
+                    <Typography variant="button" sx={{ color: '#000', fontFamily: 'Cambria, serif' }}>Home</Typography>
                   </Box>
                 </motion.div>
 
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => handleNavigation('contact')}>
                   <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                     <ContactMailIcon sx={{ fontSize: 18, color: '#2196f3' }} />
-                    <Typography variant="button" sx={{ color: '#000',   fontFamily: 'Cambria, serif'  }}>Contact</Typography>
+                    <Typography variant="button" sx={{ color: '#000', fontFamily: 'Cambria, serif' }}>Contact</Typography>
                   </Box>
                 </motion.div>
 
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => handleNavigation('help')}>
                   <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                     <HelpOutlineIcon sx={{ fontSize: 18, color: '#a5a322ff' }} />
-                    <Typography variant="button" sx={{ color: '#000',  fontFamily: 'Cambria, serif'  }}>Help</Typography>
+                    <Typography variant="button" sx={{ color: '#000', fontFamily: 'Cambria, serif' }}>Help</Typography>
                   </Box>
                 </motion.div>
 
