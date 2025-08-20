@@ -8,7 +8,7 @@ const ErrorPage = ({ code = 404, message = "Page Not Found" }) => {
     <div style={styles.container}>
       <h1 style={styles.code}>{code}</h1>
       <p style={styles.message}>{message}</p>
-      <button style={styles.button} onClick={() => navigate("/")}>
+      <button style={styles.button} onClick={() => navigate("/intportal")}>
         Go Back Home
       </button>
     </div>
@@ -48,5 +48,4 @@ const styles = {
     transition: "background 0.2s ease",
   },
 };
-
 export default ErrorPage;

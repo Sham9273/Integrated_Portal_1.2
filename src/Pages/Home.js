@@ -58,8 +58,8 @@ export default function Home({ isAuthenticated, ...props }) {
             alt="Banner"
             style={{
               width: '100%',
-              //height: '350px',
               objectFit: 'fill',
+              display: 'block',
             }}
           />
         </Box>

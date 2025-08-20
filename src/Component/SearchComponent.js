@@ -58,11 +58,11 @@ const SearchComponent = () => {
     if (e.key === 'ArrowDown') {
       e.preventDefault();
       setActiveIndex(prev => (prev + 1) % filteredItems.length);
-    } 
+    }
     else if (e.key === 'ArrowUp') {
       e.preventDefault();
       setActiveIndex(prev => (prev - 1 + filteredItems.length) % filteredItems.length);
-    } 
+    }
     else if (e.key === 'Enter') {
       e.preventDefault();
       if (activeIndex >= 0) {
@@ -87,7 +87,7 @@ const SearchComponent = () => {
 
   return (
     <>
-      {!showSearch && (
+      {/* {!showSearch && (
         <SearchIcon
           onClick={handleSearchClick}
           sx={{
@@ -97,9 +97,9 @@ const SearchComponent = () => {
             marginLeft: isMobile ? 0 : 2,
           }}
         />
-      )}
+      )} */}
 
-      {!isMobile && showSearch && (
+      {/* {!isMobile && showSearch && (
         <div style={{ position: 'relative' }}>
           <motion.div
             whileHover={{ scale: 1.03 }}
@@ -169,7 +169,84 @@ const SearchComponent = () => {
             </Paper>
           </Popper>
         </div>
+      )} */}
+      {!isMobile && (
+        <div style={{ position: 'relative' }}>
+          <motion.div
+            whileHover={{ scale: 1.03 }}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              backgroundColor: 'rgba(240, 240, 240, 0.9)',
+              padding: '2px 12px',
+              borderRadius: 16,
+              boxShadow: 'inset 0 0 4px rgba(0,0,0,0.1)',
+              maxWidth: 400,
+              //marginLeft: 20,
+              marginRight: 20,
+              position: 'relative',
+            }}
+          >
+            <SearchIcon sx={{ color: 'text.secondary', mr: 1, fontSize: 18 }} />
+
+            <InputBase
+              inputRef={inputRef}
+              placeholder="Search…"
+              inputProps={{ 'aria-label': 'search' }}
+              value={searchTerm}
+              onChange={handleInputChange}
+              onKeyDown={handleKeyDown}
+              sx={{
+                flex: 1,
+                fontSize: '0.85rem',
+                color: 'text.primary',
+                '&:focus': { outline: 'none' },
+              }}
+            />
+
+            {/* You can keep this close icon if you want to clear input */}
+            {/* <CloseIcon
+              onClick={() => {
+                setSearchTerm('');
+                setFilteredItems([]);
+                setActiveIndex(-1);
+              }}
+              sx={{
+                color: '#f44336',
+                fontSize: 20,
+                cursor: 'pointer',
+                ml: 1,
+              }}
+            /> */}
+          </motion.div>
+
+          <Popper
+            open={filteredItems.length > 0}
+            anchorEl={inputRef.current}
+            placement="bottom-start"
+            style={{ zIndex: 9999 }}
+          >
+            <Paper sx={{ mt: 1, width: inputRef.current?.offsetWidth || 300 }}>
+              <List dense>
+                {filteredItems.map((item, index) => (
+                  <ListItem
+                    key={index}
+                    button
+                    onClick={() => handleResultClick(item)}
+                    sx={{
+                      backgroundColor: index === activeIndex ? 'rgba(0, 0, 0, 0.08)' : 'transparent',
+                      '&:hover': { backgroundColor: 'rgba(0, 0, 0, 0.1)' }
+                    }}
+                  >
+                    <ListItemText primary={item} />
+                  </ListItem>
+                ))}
+              </List>
+            </Paper>
+          </Popper>
+        </div>
       )}
+
     </>
   );
 };

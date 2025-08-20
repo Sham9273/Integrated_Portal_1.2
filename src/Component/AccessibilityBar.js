@@ -31,9 +31,6 @@ const AccessibilityBar = ({ darkMode, setDarkMode }) => {
     document.body.style.lineHeight = lineSpacing ? '2' : 'normal';
   }, [lineSpacing]);
 
-  // useEffect(() => {
-  //   document.body.style.filter = highContrast ? 'contrast(150%)' : 'none';
-  // }, [highContrast]);
 
   useEffect(() => {
     const mainContent = document.getElementById('main-content');

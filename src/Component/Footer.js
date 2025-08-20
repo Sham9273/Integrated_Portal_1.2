@@ -47,7 +47,7 @@ const Footer = () => {
               mb={3}
             >
 
-              <Link href="#" className="footer-link">
+              <Link href="/intportal/contact" className="footer-link">
                 <LinkIcon fontSize="small" className="link-icon" />
                 Link To Us
               </Link>

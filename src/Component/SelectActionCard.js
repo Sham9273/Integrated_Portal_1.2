@@ -7,6 +7,8 @@ import CardActionArea from '@mui/material/CardActionArea';
 import { motion } from 'framer-motion';
 import PageHeading from './PageHeading';
 import bg2 from '../images/bgbg.jpg';
+import SearchComponent from './SearchComponent';
+import { useState } from 'react';
 
 // Icon Images
 import webmailicon from '../images/icons/1.png';
@@ -28,17 +30,18 @@ const cards = [
   { id: 3, title: 'eMulazim', icon: eMulazimicon, description: 'Streamline file workflows with easy document sharing, automated approvals, and real-time tracking for faster decision-making.' },
   { id: 4, title: 'APAR', icon: APARicon, description: 'Simplify annual performance tracking with centralized employee reports, metrics, and actionable insights.' },
   { id: 5, title: 'Asset Management', icon: AssetManagementicon, description: 'Track, maintain, and manage assets across their entire lifecycle, from procurement to disposal, with built-in compliance, maintenance, and reporting tools.' },
-  { id: 6, title: 'Help Desk', icon: HelpDeskicon, description: 'Coming Soon' },
-  { id: 7, title: 'Visitor Management', icon: VistorManagementicon, description: 'Coming Soon' },
+  { id: 6, title: 'Help Desk', icon: HelpDeskicon, description: 'Centralized platform for issue reporting, tracking, and quick resolution.' },
+  { id: 7, title: 'Visitor Management', icon: VistorManagementicon, description: 'Digitized visitor entry, tracking, and monitoring for secure access.' },
   { id: 8, title: 'Project Management', icon: ProjectManagementicon, description: 'Plan projects, assign tasks, track milestones, and collaborate with teams using real-time dashboards and reports.' },
   { id: 9, title: 'CAKES', icon: CAKESicon, description: 'Dedicated training and e-learning hub offering modules, progress tracking, certifications, and a rich content library.' },
-  { id: 10, title: 'Corporate Learning & Development Platform', icon: CorporateLearningDevelopmentPlatformicon, description: 'Coming Soon' },
-  { id: 11, title: 'CDAC Website', icon: CDACWebsiteicon, description: 'Coming Soon' },
-  { id: 12, title: 'Intranet Portal', icon: IntranetPortalicon, description: 'Coming Soon' },
+  { id: 10, title: 'Corporate Learning & Development Platform', icon: CorporateLearningDevelopmentPlatformicon, description: 'Online training, knowledge sharing, and employee skill enhancement.' },
+  { id: 11, title: 'CDAC Website', icon: CDACWebsiteicon, description: 'Official CDAC online presence with updates, services, and resources.' },
+  { id: 12, title: 'Intranet Portal', icon: IntranetPortalicon, description: 'Secure internal hub for collaboration, communication, and information sharing.' },
 ];
 
 export default function SelectActionCard() {
   const [selectedCard, setSelectedCard] = React.useState(null);
+  const [setActiveCard] = useState('');
 
   return (
     <Box
@@ -69,6 +72,9 @@ export default function SelectActionCard() {
         >
           Services
         </Typography>
+        <Box sx={{ position: 'absolute', right: 0 }}>
+          <SearchComponent setActiveCard={setActiveCard} />
+        </Box>
       </Box>
       <hr />
       <br />
